@@ -29,6 +29,29 @@ public class RestaurantDAOImpl implements RestaurantDAO {
 	@Override
 	public void saveRestaurant(EntityRestaurant restaurant) {
 		Session session = sessionFactory.getCurrentSession();
-		session.save(restaurant);
+		session.saveOrUpdate(restaurant);
+	}
+
+	@Override
+	public void addRestaurant(EntityRestaurant restaurant) {
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(restaurant);
+	}
+
+	@Override
+	public EntityRestaurant getRestaurant(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		return session.get(EntityRestaurant.class, id);
+	}
+
+	@Override
+	public void deleteRestaurant(int id) {
+		Session session = sessionFactory.getCurrentSession();
+
+		Query query = session.createQuery("delete from EntityRestaurant where restaurantId=:restaurantId");
+		query.setParameter("restaurantId", id);
+		query.executeUpdate();
+
+
 	}
 }

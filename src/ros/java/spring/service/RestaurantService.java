@@ -13,4 +13,9 @@ public interface RestaurantService {
 
 	void saveRestaurant(EntityRestaurant restaurant);
 
+	EntityRestaurant getRestaurant(int id);
+
+	void deleteRestaurant(int id);
+
+	void addRestaurant(EntityRestaurant restaurant);
 }

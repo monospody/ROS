@@ -31,10 +31,18 @@
 					<th>Capacity</th>
 					<th>Address</th>
 					<th>Phone number</th>
+					<th>Action</th>
 				</tr>
 				</thead>
 
 				<c:forEach var="tempRes" items="${restaurants}">
+
+					<c:url var="updateLink" value="/restaurant/showUpdateRestaurantForm">
+						<c:param name="restaurantId" value="${tempRes.restaurantId}"/>
+					</c:url>
+					<c:url var="deleteLink" value="/restaurant/deleteRestaurant">
+						<c:param name="restaurantId" value="${tempRes.restaurantId}"/>
+					</c:url>
 				<tbody>
 					<tr>
 						<td>${tempRes.restaurantId}</td>
@@ -44,6 +52,11 @@
 						<td>${tempRes.restaurantCapacity}</td>
 						<td>${tempRes.restaurantAddress}</td>
 						<td>${tempRes.restaurantPhoneNumber}</td>
+						<td>
+							<a href="${updateLink}">Update</a>
+							|
+							<a href="${deleteLink}" onclick="if (!(confirm('Are you sure you want to delete this restaurant ?'))) return false">Delete</a>
+						</td>
 					</tr>
 				</tbody>
 				</c:forEach>
