@@ -17,7 +17,7 @@ import java.util.List;
  * @author Martin Dolinsky
  */
 @Controller
-@RequestMapping("/list")
+@RequestMapping("/restaurant")
 public class RestaurantController {
 
 	@InitBinder
