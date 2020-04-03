@@ -27,8 +27,49 @@ public class RestaurantDAOImpl implements RestaurantDAO {
 	}
 
 	@Override
+	public List<EntityRestaurant> getRestaurantsByKeyword(String word) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query theQuery;
+		if (word != null && word.trim().length() > 0) {
+			theQuery =currentSession.createQuery("from EntityRestaurant where lower(restaurantName) like :word or lower(restaurantTags) like :word", EntityRestaurant.class);
+			theQuery.setParameter("word", "%" + word.toLowerCase() + "%");
+
+		}
+		else {
+			theQuery =currentSession.createQuery("from EntityRestaurant ", EntityRestaurant.class);
+		}
+
+		return theQuery.getResultList();
+	}
+
+
+
+	@Override
 	public void saveRestaurant(EntityRestaurant restaurant) {
 		Session session = sessionFactory.getCurrentSession();
-		session.save(restaurant);
+		session.saveOrUpdate(restaurant);
+	}
+
+	@Override
+	public void addRestaurant(EntityRestaurant restaurant) {
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(restaurant);
+	}
+
+	@Override
+	public EntityRestaurant getRestaurant(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		return session.get(EntityRestaurant.class, id);
+	}
+
+	@Override
+	public void deleteRestaurant(int id) {
+		Session session = sessionFactory.getCurrentSession();
+
+		Query query = session.createQuery("delete from EntityRestaurant where restaurantId=:restaurantId");
+		query.setParameter("restaurantId", id);
+		query.executeUpdate();
+
+
 	}
 }

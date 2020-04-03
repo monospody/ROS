@@ -10,5 +10,13 @@ import java.util.List;
 public interface RestaurantDAO {
 	public List<EntityRestaurant> getRestaurants();
 
+	public List<EntityRestaurant> getRestaurantsByKeyword(String word);
+
 	void saveRestaurant(EntityRestaurant restaurant);
+
+	void addRestaurant(EntityRestaurant restaurant);
+
+	EntityRestaurant getRestaurant(int id);
+
+	void deleteRestaurant(int id);
 }

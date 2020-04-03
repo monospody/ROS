@@ -16,7 +16,10 @@
 <body>
 	<h2>Add Restaurant</h2>
 
-	<form:form action="saveRestaurant" modelAttribute="restaurant" method="POST">
+	<form:form action="processAddRestaurantForm" modelAttribute="restaurant" method="post">
+
+		<form:hidden path="restaurantId"/>
+
 		<label>Name</label>
 		<form:input path="restaurantName"/>
 		<form:errors path="restaurantName" cssClass="error"/>
@@ -24,6 +27,10 @@
 		<label>Address</label>
 		<form:input path="restaurantAddress"/>
 		<form:errors path="restaurantAddress" cssClass="error"/>
+		<br>
+		<label>City</label>
+		<form:input path="restaurantCity"/>
+		<form:errors path="restaurantCity" cssClass="error"/>
 		<br>
 		<label>Number of tables</label>
 		<form:input path="restaurantTables"/>
@@ -33,7 +40,7 @@
 		<form:input path="restaurantCapacity"/>
 		<form:errors path="restaurantCapacity" cssClass="error"/>
 		<br>
-		<input type="submit" value="Add restaurant">
+		<input type="submit" value="Submit">
 	</form:form>
 
 	<hr>

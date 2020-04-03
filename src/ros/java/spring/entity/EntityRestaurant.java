@@ -10,7 +10,7 @@ import java.util.Objects;
  * @author Martin Dolinsky
  */
 @Entity
-@Table(name = "restaurant")
+@Table(name = "restaurant", schema = "restaurantOrderingSystem")
 public class EntityRestaurant {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,8 +43,13 @@ public class EntityRestaurant {
 
 	@Column(name = "address", nullable = false, length = 100)
 	@NotNull(message = "is required")
-	@Size(min = 1,message = "is required")
+	@Size(min = 1, message = "is required")
 	private String restaurantAddress;
+
+	@Column(name = "city", nullable = false, length = 50)
+	@NotNull(message = "is required")
+	@Size(min =1, message = "is required")
+	private String restaurantCity;
 
 	@Column(name = "phoneNumber", nullable = false, length = 45)
 	@NotNull(message = "is required")
@@ -123,6 +128,14 @@ public class EntityRestaurant {
 
 	public void setRestaurantAddress(String address) {
 		this.restaurantAddress = address;
+	}
+
+	public String getRestaurantCity() {
+		return restaurantCity;
+	}
+
+	public void setRestaurantCity(String restaurantCity) {
+		this.restaurantCity = restaurantCity;
 	}
 
 	public String getRestaurantPhoneNumber() {
