@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="sk">
@@ -109,31 +110,7 @@
 			<input class="regSubmit" type="submit" value="Registrovať sa">
 		</form:form>
 
-		<%--<form class="registerCustomer">
 
-		<div class="regWrapLeft">
-			<label class="regLabel">Meno :</label><br>
-			<input class="regInput" type="text"><br>
-
-			<label class="regLabel">Priezvisko :</label><br>
-			<input class="regInput" type="text"><br>
-
-			<label class="regLabel">E-mailová adresa :</label><br>
-			<input class="regInput" type="text"><br>
-		</div>
-		<div class="regWrapRight">
-
-			<label class="regLabel">Telefónne číslo :</label><br>
-			<input class="regInput" type="text"><br>
-
-			<label class="regLabel">Heslo :</label><br>
-			<input class="regInput" type="password"><br>
-
-			<label class="regLabel">Potvrdenie hesla :</label><br>
-			<input class="regInput" type="password"><br>
-		</div>
-			<input class="regSubmit" type="submit" value="Registrovať sa">
-		</form>--%>
 	</section>
 
 
@@ -325,11 +302,35 @@
 
 	<div class="wrapRestaurants">
 
+<<<<<<< HEAD
+		<c:forEach var="restaurant" items="${restaurants}">
+=======
+>>>>>>> master
 
 			<section class="infoRestaurant">
 				<div class="peopleAndPriceSpace">
 				</div>
 
+<<<<<<< HEAD
+				<div class="groupPeople">
+					<div class="person">
+					</div>
+					<div class="person">
+					</div>
+					<div class="person">
+					</div>
+				</div>
+
+				<div class="groupPrice">
+					<div class="price">
+					</div>
+					<div class="price">
+					</div>
+					<div class="price">
+					</div>
+				</div>
+				<p class="nameRestaurant"><c:out value="${restaurant.restaurantName}"/></p>
+=======
 					<div class="groupPeople">
 						<div class="person">
 						</div>
@@ -522,6 +523,7 @@
 						</div>
 					</div>
 				<p class="nameRestaurant">Geronimo Express</p>
+>>>>>>> master
 
 				<div class="whiteWrap">
 					<div class="logoRestaurant"></div>
@@ -537,7 +539,11 @@
 
 					<p class="percent">97.8%</p>
 
+<<<<<<< HEAD
+					<div class="groupCircles">
+=======
 					 <div class="groupCircles">
+>>>>>>> master
 
 						<div class="circle circlegreen">
 						</div>
@@ -548,6 +554,10 @@
 						<div class="circle">
 						</div>
 
+<<<<<<< HEAD
+					</div>
+
+=======
 					 </div>
 
 				</div>
@@ -608,6 +618,7 @@
 
 					 </div>
 
+>>>>>>> master
 				</div>
 
 				<div class="cyanWrap">
@@ -616,6 +627,9 @@
 				</div>
 
 			</section>
+
+		</c:forEach>
+
 	</div>
 
 

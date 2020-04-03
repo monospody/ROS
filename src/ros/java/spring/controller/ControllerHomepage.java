@@ -13,17 +13,17 @@ import java.util.List;
 @Controller
 public class ControllerHomepage {
 
-	@Autowired
-	private RestaurantService restaurantService;
+    @Autowired
+    private RestaurantService restaurantService;
 
-	@RequestMapping("/home")
-	public String showHome(Model model){
+    @RequestMapping("/home")
+    public String showHome(Model model){
 
-		EntityCustomer customer = new EntityCustomer();
-		model.addAttribute("customer", customer);
+        EntityCustomer customer = new EntityCustomer();
+        model.addAttribute("customer", customer);
 
-		List<EntityRestaurant> restaurants = restaurantService.getRestaurants();
-		model.addAttribute("restaurants", restaurants);
-		return "homepage";
-	}
+        List<EntityRestaurant> restaurants = restaurantService.getRestaurants();
+        model.addAttribute("restaurants", restaurants);
+        return "homepage";
+    }
 }
