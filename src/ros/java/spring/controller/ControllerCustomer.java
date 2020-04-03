@@ -34,7 +34,7 @@ public class ControllerCustomer {
         EntityCustomer customer = new EntityCustomer();
         model.addAttribute("customer", customer);
 
-        return "homepage";
+        return "add-customer-form";
     }
 
     @PostMapping("/processAddCustomerForm")
@@ -44,7 +44,7 @@ public class ControllerCustomer {
             serviceCustomer.addCustomer(customer);
             return "redirect:/customer/list";
         }else{
-            return "homepage";
+            return "redirect:/home";
         }
     }
 

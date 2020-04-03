@@ -13,10 +13,10 @@ public class EntityCustomer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int customerId;
 
-    @Column(name = "first_name", nullable = false, length = 50)
+    @Column(name = "firstName", nullable = false, length = 50)
     private String customerFirstName;
 
-    @Column(name = "last_name", nullable = false, length = 50)
+    @Column(name = "lastName", nullable = false, length = 50)
     private String customerLastName;
 
     @Column(name = "email", nullable = false, length = 100)

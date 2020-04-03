@@ -17,10 +17,8 @@ public class DAOCustomerImpl implements DAOCustomer {
 
     @Override
     public List<EntityCustomer> getCustomers() {
-
         Session session = sessionFactory.getCurrentSession();
         Query<EntityCustomer> query = session.createQuery("from EntityCustomer ORDER BY customerLastName", EntityCustomer.class);
-
         return query.getResultList();
     }
 
@@ -47,5 +45,13 @@ public class DAOCustomerImpl implements DAOCustomer {
         Query query = session.createQuery("DELETE FROM EntityCustomer WHERE customerId=:customerId");
         query.setParameter("customerId", theId);
         query.executeUpdate();
+
+        for (int x=0; x<20; x++){
+            for (int y=0; y<30; y++){
+                if(x > y){
+
+                }
+            }
+        }
     }
 }

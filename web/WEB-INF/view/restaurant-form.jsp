@@ -37,6 +37,6 @@
 	</form:form>
 
 	<hr>
-	<a href="${pageContext.request.contextPath}/list/list">Back to list</a>
+	<a href="${pageContext.request.contextPath}/restaurant/list">Back to list</a>
 </body>
 </html>

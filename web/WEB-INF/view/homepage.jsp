@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="sk">
@@ -12,7 +13,7 @@
 	<link rel="icon" href="obr/icon.png">
     <link href="style.css" rel="stylesheet">
 --%>
-	<link rel="icon" href="${pageContext.request.contextPath}/resources/img/headPhoto.jpg">
+	<link rel="icon" href="${pageContext.request.contextPath}/resources/img/icon.png">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/merge-style.css" />
 </head>
 <body class="homepageCustomer">
@@ -84,7 +85,7 @@
 		<div id="exit" onClick="exit()">X</div>
 		<p class="loginHead">Registrácia zákazníka</p>
 
-		<form:form cssClass="registerCustomer" action="processAddCustomerForm" modelAttribute="customer" method="post">
+		<form:form cssClass="registerCustomer" action="customer/processAddCustomerForm" modelAttribute="customer" method="post">
 			<div class="regWrapLeft">
 				<label class="regLabel">Meno :</label><br>
 				<form:input cssClass="regInput" path="customerFirstName"/>
@@ -109,31 +110,6 @@
 			<input class="regSubmit" type="submit" value="Registrovať sa">
 		</form:form>
 
-		<%--<form class="registerCustomer">
-		
-		<div class="regWrapLeft">
-			<label class="regLabel">Meno :</label><br>
-			<input class="regInput" type="text"><br>
-			
-			<label class="regLabel">Priezvisko :</label><br>
-			<input class="regInput" type="text"><br>
-			
-			<label class="regLabel">E-mailová adresa :</label><br>
-			<input class="regInput" type="text"><br>
-		</div>
-		<div class="regWrapRight">	
-			
-			<label class="regLabel">Telefónne číslo :</label><br>
-			<input class="regInput" type="text"><br>
-			
-			<label class="regLabel">Heslo :</label><br>
-			<input class="regInput" type="password"><br>
-			
-			<label class="regLabel">Potvrdenie hesla :</label><br>
-			<input class="regInput" type="password"><br>
-		</div>
-			<input class="regSubmit" type="submit" value="Registrovať sa">
-		</form>--%>
 	</section>
 	
 	
@@ -321,34 +297,35 @@
 	
 	
 	<div class="wrapRestaurants">
-	
-			
+
+		<c:forEach var="restaurant" items="${restaurants}">
+
 			<section class="infoRestaurant">
 				<div class="peopleAndPriceSpace">
 				</div>
-				
-					<div class="groupPeople">
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
+
+				<div class="groupPeople">
+					<div class="person">
 					</div>
-					
-					<div class="groupPrice">
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
+					<div class="person">
 					</div>
-				<p class="nameRestaurant">Geronimo Express</p>
-				
+					<div class="person">
+					</div>
+				</div>
+
+				<div class="groupPrice">
+					<div class="price">
+					</div>
+					<div class="price">
+					</div>
+					<div class="price">
+					</div>
+				</div>
+				<p class="nameRestaurant"><c:out value="${restaurant.restaurantName}"/></p>
+
 				<div class="whiteWrap">
 					<div class="logoRestaurant"></div>
-				
+
 					<div class="groupStars">
 						<div class="star staryellow">
 						</div>
@@ -357,11 +334,11 @@
 						<div class="star">
 						</div>
 					</div>
-					
+
 					<p class="percent">97.8%</p>
-					
-					 <div class="groupCircles">
-					 
+
+					<div class="groupCircles">
+
 						<div class="circle circlegreen">
 						</div>
 						<div class="circle">
@@ -370,249 +347,20 @@
 						</div>
 						<div class="circle">
 						</div>
-					 
-					 </div>
-					
+
+					</div>
+
 				</div>
-				
+
 				<div class="cyanWrap">
 					<p class="chooseText">VYBRAŤ</p>
 					<p class="fromPrice">od 5,00€</p>
 				</div>
-				
+
 			</section>
-	<section class="infoRestaurant">
-				<div class="peopleAndPriceSpace">
-				</div>
-				
-					<div class="groupPeople">
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-					</div>
-					
-					<div class="groupPrice">
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-					</div>
-				<p class="nameRestaurant">Geronimo Express</p>
-				
-				<div class="whiteWrap">
-					<div class="logoRestaurant"></div>
-				
-					<div class="groupStars">
-						<div class="star staryellow">
-						</div>
-						<div class="star">
-						</div>
-						<div class="star">
-						</div>
-					</div>
-					
-					<p class="percent">97.8%</p>
-					
-					 <div class="groupCircles">
-					 
-						<div class="circle circlegreen">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-					 
-					 </div>
-					
-				</div>
-				
-				<div class="cyanWrap">
-					<p class="chooseText">VYBRAŤ</p>
-					<p class="fromPrice">od 5,00€</p>
-				</div>
-				
-			</section>
-			<section class="infoRestaurant">
-				<div class="peopleAndPriceSpace">
-				</div>
-				
-					<div class="groupPeople">
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-					</div>
-					
-					<div class="groupPrice">
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-					</div>
-				<p class="nameRestaurant">Geronimo Express</p>
-				
-				<div class="whiteWrap">
-					<div class="logoRestaurant"></div>
-				
-					<div class="groupStars">
-						<div class="star staryellow">
-						</div>
-						<div class="star">
-						</div>
-						<div class="star">
-						</div>
-					</div>
-					
-					<p class="percent">97.8%</p>
-					
-					 <div class="groupCircles">
-					 
-						<div class="circle circlegreen">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-					 
-					 </div>
-					
-				</div>
-				
-				<div class="cyanWrap">
-					<p class="chooseText">VYBRAŤ</p>
-					<p class="fromPrice">od 5,00€</p>
-				</div>
-				
-			</section>
-	<section class="infoRestaurant">
-				<div class="peopleAndPriceSpace">
-				</div>
-				
-					<div class="groupPeople">
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-					</div>
-					
-					<div class="groupPrice">
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-					</div>
-				<p class="nameRestaurant">Geronimo Express</p>
-				
-				<div class="whiteWrap">
-					<div class="logoRestaurant"></div>
-				
-					<div class="groupStars">
-						<div class="star staryellow">
-						</div>
-						<div class="star">
-						</div>
-						<div class="star">
-						</div>
-					</div>
-					
-					<p class="percent">97.8%</p>
-					
-					 <div class="groupCircles">
-					 
-						<div class="circle circlegreen">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-					 
-					 </div>
-					
-				</div>
-				
-				<div class="cyanWrap">
-					<p class="chooseText">VYBRAŤ</p>
-					<p class="fromPrice">od 5,00€</p>
-				</div>
-				
-			</section>
-			<section class="infoRestaurant">
-				<div class="peopleAndPriceSpace">
-				</div>
-				
-					<div class="groupPeople">
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-					</div>
-					
-					<div class="groupPrice">
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-					</div>
-				<p class="nameRestaurant">Geronimo Express</p>
-				
-				<div class="whiteWrap">
-					<div class="logoRestaurant"></div>
-				
-					<div class="groupStars">
-						<div class="star staryellow">
-						</div>
-						<div class="star">
-						</div>
-						<div class="star">
-						</div>
-					</div>
-					
-					<p class="percent">97.8%</p>
-					
-					 <div class="groupCircles">
-					 
-						<div class="circle circlegreen">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-					 
-					 </div>
-					
-				</div>
-				
-				<div class="cyanWrap">
-					<p class="chooseText">VYBRAŤ</p>
-					<p class="fromPrice">od 5,00€</p>
-				</div>
-				
-			</section>
+
+		</c:forEach>
+
 	</div>
 
 
