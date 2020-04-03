@@ -28,6 +28,10 @@
 		<form:input path="restaurantAddress"/>
 		<form:errors path="restaurantAddress" cssClass="error"/>
 		<br>
+		<label>City</label>
+		<form:input path="restaurantCity"/>
+		<form:errors path="restaurantCity" cssClass="error"/>
+		<br>
 		<label>Number of tables</label>
 		<form:input path="restaurantTables"/>
 		<form:errors path="restaurantTables" cssClass="error"/>

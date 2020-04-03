@@ -11,6 +11,8 @@ public interface RestaurantService {
 
 	public List<EntityRestaurant> getRestaurants();
 
+	public List<EntityRestaurant> getRestaurantsByKeyword(String word);
+
 	void saveRestaurant(EntityRestaurant restaurant);
 
 	EntityRestaurant getRestaurant(int id);

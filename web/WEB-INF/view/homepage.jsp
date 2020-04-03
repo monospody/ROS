@@ -12,7 +12,7 @@
 	<link rel="icon" href="obr/icon.png">
     <link href="style.css" rel="stylesheet">
 --%>
-	<link rel="icon" href="${pageContext.request.contextPath}/resources/img/headPhoto.jpg">
+	<link rel="icon" href="${pageContext.request.contextPath}/resources/img/icon.png">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/merge-style.css" />
 </head>
 <body class="homepageCustomer">
@@ -49,13 +49,13 @@
 
 <!--
 < LOGIN LOGOUT
--->	
+-->
 
 	<section id="login">
 		<div id="exit" onClick="exit()">X</div>
 		<p class="loginHead">Prihlásenie</p>
 		<form class="login">
-		
+
 		<div class="loginWrap">
 			<label class="loginLabel">Meno alebo e-mailová adresa :</label><br>
 			<input class="loginInput" type="text"><br>
@@ -65,10 +65,10 @@
 			<input class="loginSubmit" type="submit" value="Prihlásiť sa">
 		</form>
 	</section>
-	
+
 	<section id="registerHub">
 		<div id="exit" onClick="exit()">X</div>
-	
+
 		<p class="registerHubHead">Registrovať sa</p>
 		<div class="leftReg">
 			<p class="regText" onClick="registerCustomer()">Ako zákazník</p>
@@ -76,10 +76,10 @@
 
 		<div class="rightReg">
 			<p class="regText" onClick="registerCompany()">Ako firma</p>
-		</div>	
+		</div>
 	</section>
-	
-	
+
+
 	<section id="registerCustomer">
 		<div id="exit" onClick="exit()">X</div>
 		<p class="loginHead">Registrácia zákazníka</p>
@@ -110,33 +110,33 @@
 		</form:form>
 
 		<%--<form class="registerCustomer">
-		
+
 		<div class="regWrapLeft">
 			<label class="regLabel">Meno :</label><br>
 			<input class="regInput" type="text"><br>
-			
+
 			<label class="regLabel">Priezvisko :</label><br>
 			<input class="regInput" type="text"><br>
-			
+
 			<label class="regLabel">E-mailová adresa :</label><br>
 			<input class="regInput" type="text"><br>
 		</div>
-		<div class="regWrapRight">	
-			
+		<div class="regWrapRight">
+
 			<label class="regLabel">Telefónne číslo :</label><br>
 			<input class="regInput" type="text"><br>
-			
+
 			<label class="regLabel">Heslo :</label><br>
 			<input class="regInput" type="password"><br>
-			
+
 			<label class="regLabel">Potvrdenie hesla :</label><br>
 			<input class="regInput" type="password"><br>
 		</div>
 			<input class="regSubmit" type="submit" value="Registrovať sa">
 		</form>--%>
 	</section>
-	
-	
+
+
 	<section id="registerCompany">
 		<div id="exit" onClick="exit()">X</div>
 		<p class="loginHead">Registrácia firmy</p>
@@ -144,22 +144,22 @@
 		<div class="regWrapLeft">
 			<label class="regLabel">Meno :</label><br>
 			<input class="regInput" type="text"><br>
-			
+
 			<label class="regLabel">Priezvisko :</label><br>
 			<input class="regInput" type="text"><br>
-			
+
 			<label class="regLabel">E-mailová adresa :</label><br>
 			<input class="regInput" type="text"><br>
-		
+
 		</div>
-		<div class="regWrapRight">	
-			
+		<div class="regWrapRight">
+
 			<label class="regLabel">Telefónne číslo :</label><br>
 			<input class="regInput" type="text"><br>
-			
+
 			<label class="regLabel">Heslo :</label><br>
 			<input class="regInput" type="password"><br>
-			
+
 			<label class="regLabel">Potvrdenie hesla :</label><br>
 			<input class="regInput" type="password"><br>
 		</div>
@@ -168,8 +168,8 @@
 			</div>
 		</form>
 	</section>
-	
-	
+
+
 	<section id="registerCompanyNext">
 		<div id="exit" onClick="exit()">X</div>
 		<p class="loginHead">Registrácia zamestnancov</p>
@@ -177,83 +177,83 @@
 		<div class="regWrapLeft">
 			<label class="regLabel">Zamestnanec č.1 :</label><br>
 			<input class="regInput" type="text" placeholder="E-mailová adresa zamestnanca"><br>
-			
+
 			<label class="regLabel">Čašník</label>
 			<input type="checkbox">
 			<label class="regLabel">Kuchyňa</label>
 			<input type="checkbox">
 			<label class="regLabel">Majiteľ</label>
 			<input type="checkbox">
-			
+
 			<br><br>
-			
+
 			<label class="regLabel">Zamestnanec č.2 :</label><br>
 			<input class="regInput" type="text" placeholder="E-mailová adresa zamestnanca"><br>
-			
+
 			<label class="regLabel">Čašník</label>
 			<input type="checkbox">
 			<label class="regLabel">Kuchyňa</label>
 			<input type="checkbox">
 			<label class="regLabel">Majiteľ</label>
 			<input type="checkbox">
-			
-		
+
+
 		</div>
-		<div class="regWrapRight">	
-			
+		<div class="regWrapRight">
+
 			<label class="regLabel">Zamestnanec č.3 :</label><br>
 			<input class="regInput" type="text" placeholder="E-mailová adresa zamestnanca"><br>
-			
+
 			<label class="regLabel">Čašník</label>
 			<input type="checkbox">
 			<label class="regLabel">Kuchyňa</label>
 			<input type="checkbox">
 			<label class="regLabel">Majiteľ</label>
 			<input type="checkbox">
-			
+
 			<br><br>
-			
+
 			<label class="regLabel">Zamestnanec č.4 :</label><br>
 			<input class="regInput" type="text" placeholder="E-mailová adresa zamestnanca"><br>
-			
+
 			<label class="regLabel">Čašník</label>
 			<input type="checkbox">
 			<label class="regLabel">Kuchyňa</label>
 			<input type="checkbox">
 			<label class="regLabel">Majiteľ</label>
 			<input type="checkbox">
-			
+
 		</div>
-		
+
 			<div class="inv" onClick="registerCompanyNext2()">
 				<input class="regSubmit" type="submit" value="Ďalej" disabled="disabled">
 			</div>
-			
+
 		</form>
 	</section>
-	
-	
-	
-	
-	
+
+
+
+
+
 	<section id="registerCompanyNext2">
 		<div id="exit" onClick="exit()">X</div>
 		<p class="loginHead">Ďakujeme za Vašu registráciu</p>
 		<form class="registerCompanyNext2">
 			<p class="regLabel">O ďalšom postupe Vás budeme informovať e-mailom</p>
-		
-		
+
+
 			<div class="inv" onClick="exit()">
 				<input class="regSubmit" type="submit" value="OK" disabled="disabled">
 			</div>
-			
+
 		</form>
 	</section>
 
 	<section id="reservation">
 			<h3>Rezervácia</h3>
-	<div class="wrapWholeForm">		
-		<div class="wrapFirstForm">	
+	<div class="wrapWholeForm">
+		<div class="wrapFirstForm">
 			<div class="wrapFormReservation">
 				<label for="cities" class="reservationLabel">Vyber mesto:</label><br>
 				<select id="cities" class="reservationInput">
@@ -263,7 +263,7 @@
 				  <option value="poprad">Poprad</option>
 				</select>
 			</div>
-			
+
 			<div class="wrapFormReservation">
 				<label for="sort" class="reservationLabel">Zoradiť podľa:</label><br>
 				<select id="sort" class="reservationInput">
@@ -273,13 +273,13 @@
 				  <option value="hodnotenia">hodnotenia</option>
 				</select>
 			</div>
-			
+
 			<div class="wrapFormReservation">
 				<label class="reservationLabel">Dátum:</label><br>
 				<input type="date" class="reservationInput">
 			</div>
-			
-			
+
+
 			<div class="wrapFormReservation">
 				<label for="time" class="reservationLabel">Čas:</label><br>
 				<select id="time" class="reservationInput">
@@ -300,8 +300,8 @@
 			</div>
 			<br>
 			<br>
-		</div>	
-		<div class="wrapSecondForm" id="visibleForm">	
+		</div>
+		<div class="wrapSecondForm" id="visibleForm">
 			<div class="wrapFormReservation">
 				<label for="filter" class="reservationLabel">Filter:</label><br>
 				<select id="filter" class="reservationInput">
@@ -311,22 +311,22 @@
 				  <option value="romantika">romantika</option>
 				</select>
 			</div>
-			
+
 			<div class="wrapFormReservation">
 				<label class="reservationLabel" class="reservationLabel">Hľadať:</label><br>
 				<input type="text" class="reservationInputSearch">
 			</div>
-		</div>	
+		</div>
 	</div>
-	
-	
+
+
 	<div class="wrapRestaurants">
-	
-			
+
+
 			<section class="infoRestaurant">
 				<div class="peopleAndPriceSpace">
 				</div>
-				
+
 					<div class="groupPeople">
 						<div class="person">
 						</div>
@@ -335,7 +335,7 @@
 						<div class="person">
 						</div>
 					</div>
-					
+
 					<div class="groupPrice">
 						<div class="price">
 						</div>
@@ -345,10 +345,10 @@
 						</div>
 					</div>
 				<p class="nameRestaurant">Geronimo Express</p>
-				
+
 				<div class="whiteWrap">
 					<div class="logoRestaurant"></div>
-				
+
 					<div class="groupStars">
 						<div class="star staryellow">
 						</div>
@@ -357,11 +357,11 @@
 						<div class="star">
 						</div>
 					</div>
-					
+
 					<p class="percent">97.8%</p>
-					
+
 					 <div class="groupCircles">
-					 
+
 						<div class="circle circlegreen">
 						</div>
 						<div class="circle">
@@ -370,21 +370,21 @@
 						</div>
 						<div class="circle">
 						</div>
-					 
+
 					 </div>
-					
+
 				</div>
-				
+
 				<div class="cyanWrap">
 					<p class="chooseText">VYBRAŤ</p>
 					<p class="fromPrice">od 5,00€</p>
 				</div>
-				
+
 			</section>
 	<section class="infoRestaurant">
 				<div class="peopleAndPriceSpace">
 				</div>
-				
+
 					<div class="groupPeople">
 						<div class="person">
 						</div>
@@ -393,7 +393,7 @@
 						<div class="person">
 						</div>
 					</div>
-					
+
 					<div class="groupPrice">
 						<div class="price">
 						</div>
@@ -403,10 +403,10 @@
 						</div>
 					</div>
 				<p class="nameRestaurant">Geronimo Express</p>
-				
+
 				<div class="whiteWrap">
 					<div class="logoRestaurant"></div>
-				
+
 					<div class="groupStars">
 						<div class="star staryellow">
 						</div>
@@ -415,11 +415,11 @@
 						<div class="star">
 						</div>
 					</div>
-					
+
 					<p class="percent">97.8%</p>
-					
+
 					 <div class="groupCircles">
-					 
+
 						<div class="circle circlegreen">
 						</div>
 						<div class="circle">
@@ -428,21 +428,21 @@
 						</div>
 						<div class="circle">
 						</div>
-					 
+
 					 </div>
-					
+
 				</div>
-				
+
 				<div class="cyanWrap">
 					<p class="chooseText">VYBRAŤ</p>
 					<p class="fromPrice">od 5,00€</p>
 				</div>
-				
+
 			</section>
 			<section class="infoRestaurant">
 				<div class="peopleAndPriceSpace">
 				</div>
-				
+
 					<div class="groupPeople">
 						<div class="person">
 						</div>
@@ -451,7 +451,7 @@
 						<div class="person">
 						</div>
 					</div>
-					
+
 					<div class="groupPrice">
 						<div class="price">
 						</div>
@@ -461,10 +461,10 @@
 						</div>
 					</div>
 				<p class="nameRestaurant">Geronimo Express</p>
-				
+
 				<div class="whiteWrap">
 					<div class="logoRestaurant"></div>
-				
+
 					<div class="groupStars">
 						<div class="star staryellow">
 						</div>
@@ -473,11 +473,11 @@
 						<div class="star">
 						</div>
 					</div>
-					
+
 					<p class="percent">97.8%</p>
-					
+
 					 <div class="groupCircles">
-					 
+
 						<div class="circle circlegreen">
 						</div>
 						<div class="circle">
@@ -486,21 +486,21 @@
 						</div>
 						<div class="circle">
 						</div>
-					 
+
 					 </div>
-					
+
 				</div>
-				
+
 				<div class="cyanWrap">
 					<p class="chooseText">VYBRAŤ</p>
 					<p class="fromPrice">od 5,00€</p>
 				</div>
-				
+
 			</section>
 	<section class="infoRestaurant">
 				<div class="peopleAndPriceSpace">
 				</div>
-				
+
 					<div class="groupPeople">
 						<div class="person">
 						</div>
@@ -509,7 +509,7 @@
 						<div class="person">
 						</div>
 					</div>
-					
+
 					<div class="groupPrice">
 						<div class="price">
 						</div>
@@ -519,10 +519,10 @@
 						</div>
 					</div>
 				<p class="nameRestaurant">Geronimo Express</p>
-				
+
 				<div class="whiteWrap">
 					<div class="logoRestaurant"></div>
-				
+
 					<div class="groupStars">
 						<div class="star staryellow">
 						</div>
@@ -531,11 +531,11 @@
 						<div class="star">
 						</div>
 					</div>
-					
+
 					<p class="percent">97.8%</p>
-					
+
 					 <div class="groupCircles">
-					 
+
 						<div class="circle circlegreen">
 						</div>
 						<div class="circle">
@@ -544,21 +544,21 @@
 						</div>
 						<div class="circle">
 						</div>
-					 
+
 					 </div>
-					
+
 				</div>
-				
+
 				<div class="cyanWrap">
 					<p class="chooseText">VYBRAŤ</p>
 					<p class="fromPrice">od 5,00€</p>
 				</div>
-				
+
 			</section>
 			<section class="infoRestaurant">
 				<div class="peopleAndPriceSpace">
 				</div>
-				
+
 					<div class="groupPeople">
 						<div class="person">
 						</div>
@@ -567,7 +567,7 @@
 						<div class="person">
 						</div>
 					</div>
-					
+
 					<div class="groupPrice">
 						<div class="price">
 						</div>
@@ -577,10 +577,10 @@
 						</div>
 					</div>
 				<p class="nameRestaurant">Geronimo Express</p>
-				
+
 				<div class="whiteWrap">
 					<div class="logoRestaurant"></div>
-				
+
 					<div class="groupStars">
 						<div class="star staryellow">
 						</div>
@@ -589,11 +589,11 @@
 						<div class="star">
 						</div>
 					</div>
-					
+
 					<p class="percent">97.8%</p>
-					
+
 					 <div class="groupCircles">
-					 
+
 						<div class="circle circlegreen">
 						</div>
 						<div class="circle">
@@ -602,16 +602,16 @@
 						</div>
 						<div class="circle">
 						</div>
-					 
+
 					 </div>
-					
+
 				</div>
-				
+
 				<div class="cyanWrap">
 					<p class="chooseText">VYBRAŤ</p>
 					<p class="fromPrice">od 5,00€</p>
 				</div>
-				
+
 			</section>
 	</div>
 
@@ -625,10 +625,10 @@
 
 <!--
 LOGIN LOGOUT >
--->		
-	
-	
-	
+-->
+
+
+
 <div class="rightWall"></div>
 
 

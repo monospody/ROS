@@ -8,31 +8,31 @@ import java.util.Objects;
 @Table(name = "customer", schema = "restaurantOrderingSystem")
 public class EntityCustomer {
 
-    @Id
-    @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customerId;
+	@Id
+	@Column(name = "id", nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int customerId;
 
-    @Column(name = "first_name", nullable = false, length = 50)
-    private String customerFirstName;
+	@Column(name = "firstName", nullable = false, length = 50)
+	private String customerFirstName;
 
-    @Column(name = "last_name", nullable = false, length = 50)
-    private String customerLastName;
+	@Column(name = "lastName", nullable = false, length = 50)
+	private String customerLastName;
 
-    @Column(name = "email", nullable = false, length = 100)
-    private String customerEmail;
+	@Column(name = "email", nullable = false, length = 100)
+	private String customerEmail;
 
-    @Column(name = "phoneNumber", nullable = false, length = 100)
-    private String customerPhone;
+	@Column(name = "phoneNumber", nullable = false, length = 100)
+	private String customerPhone;
 
-    @Column(name = "password", nullable = false, length = 100)
-    private String customerPassword;
+	@Column(name = "password", nullable = false, length = 100)
+	private String customerPassword;
 
-    @Transient
-    private String customerCheckPassword;
+	@Transient
+	private String customerCheckPassword;
 
-    @Column(name = "registrationDate", nullable = false)
-    private Timestamp registrationDate;
+	@Column(name = "registrationDate", nullable = false)
+	private Timestamp registrationDate;
 
     public EntityCustomer() {
     }

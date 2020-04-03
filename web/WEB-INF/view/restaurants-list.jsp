@@ -8,6 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Restaurants list</title>
@@ -15,7 +16,18 @@
 
 </head>
 <body>
-	<h1>RESTAURANTS</h1>
+	<div id="wrapper">
+		<div id="header">
+			<h2>RESTAURANTS</h2>
+		</div>
+		<form:form action="search" method="get">
+			Search :
+			<input type="text" name="word">
+			<input type="submit" value="Submit" class="add-button">
+		</form:form>
+	</div>
+
+
 
 	<div id="container">
 		<div id="content">
@@ -30,6 +42,7 @@
 					<th>Tables</th>
 					<th>Capacity</th>
 					<th>Address</th>
+					<th>City</th>
 					<th>Phone number</th>
 					<th>Action</th>
 				</tr>
@@ -51,11 +64,12 @@
 						<td>${tempRes.restaurantTables}</td>
 						<td>${tempRes.restaurantCapacity}</td>
 						<td>${tempRes.restaurantAddress}</td>
+						<td>${tempRes.restaurantCity}</td>
 						<td>${tempRes.restaurantPhoneNumber}</td>
 						<td>
-							<a href="${updateLink}">Update</a>
+							<a style="text-decoration: none;" href="${updateLink}">Update</a>
 							|
-							<a href="${deleteLink}" onclick="if (!(confirm('Are you sure you want to delete this restaurant ?'))) return false">Delete</a>
+							<a style="text-decoration: none;" href="${deleteLink}" onclick="if (!(confirm('Are you sure you want to delete this restaurant ?'))) return false">Delete</a>
 						</td>
 					</tr>
 				</tbody>

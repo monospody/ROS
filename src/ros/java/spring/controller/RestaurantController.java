@@ -11,6 +11,7 @@ import ros.java.spring.entity.EntityCustomer;
 import ros.java.spring.entity.EntityRestaurant;
 import ros.java.spring.service.RestaurantService;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -54,6 +55,13 @@ public class RestaurantController {
 		restaurant.setRestaurantAboutRestaurant("about");
 		restaurantService.saveRestaurant(restaurant);
 		return "redirect:/restaurant/list";
+	}
+
+	@GetMapping("/search")
+	public String findRestaurantByKeyword(@RequestParam("word") String word, Model model) {
+		List<EntityRestaurant> restaurants = restaurantService.getRestaurantsByKeyword(word);
+		model.addAttribute("restaurants", restaurants);
+		return "restaurants-list";
 	}
 
 	@PostMapping("/saveRestaurant")
