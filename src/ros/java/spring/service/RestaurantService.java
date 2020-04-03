@@ -20,4 +20,6 @@ public interface RestaurantService {
 	void deleteRestaurant(int id);
 
 	void addRestaurant(EntityRestaurant restaurant);
+
+	List<EntityRestaurant> getRestaurantsByCity(String city);
 }

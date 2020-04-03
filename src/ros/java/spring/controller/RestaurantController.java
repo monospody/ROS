@@ -7,11 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import ros.java.spring.entity.EntityCustomer;
 import ros.java.spring.entity.EntityRestaurant;
 import ros.java.spring.service.RestaurantService;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -46,6 +43,12 @@ public class RestaurantController {
 		return "restaurant-form";
 	}
 
+	@RequestMapping("/showFindRestaurantForm")
+	public String showFindRestaurantForm(Model model) {
+
+		return "homepage";
+	}
+
 	@PostMapping("/processAddRestaurantForm")
 	public String addRestaurant(@ModelAttribute("restaurant") EntityRestaurant restaurant){
 		restaurant.setRestaurantOwnerId(1);
@@ -62,6 +65,17 @@ public class RestaurantController {
 		List<EntityRestaurant> restaurants = restaurantService.getRestaurantsByKeyword(word);
 		model.addAttribute("restaurants", restaurants);
 		return "restaurants-list";
+	}
+
+	@GetMapping("/searchByCity")
+	public String findRestaurantByCity(@RequestParam("city") String city, Model model) {
+		if (!city.equals("")) {
+		List<EntityRestaurant> restaurants = restaurantService.getRestaurantsByCity(city);
+		model.addAttribute("restaurants", restaurants);
+			return "restaurants-list";
+		}
+		return "homepage";
+
 	}
 
 	@PostMapping("/saveRestaurant")

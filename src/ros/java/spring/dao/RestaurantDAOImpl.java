@@ -36,8 +36,19 @@ public class RestaurantDAOImpl implements RestaurantDAO {
 
 		}
 		else {
-			theQuery =currentSession.createQuery("from EntityRestaurant ", EntityRestaurant.class);
+			theQuery = currentSession.createQuery("from EntityRestaurant ", EntityRestaurant.class);
 		}
+
+		return theQuery.getResultList();
+	}
+
+	@Override
+	public List<EntityRestaurant> getRestaurantsByCity(String city) {
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		Query theQuery;
+		theQuery = currentSession.createQuery("from EntityRestaurant where restaurantCity like :city", EntityRestaurant.class);
+		theQuery.setParameter("city", "%" + city.toLowerCase() + "%");
 
 		return theQuery.getResultList();
 	}

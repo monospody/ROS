@@ -12,6 +12,8 @@ public interface RestaurantDAO {
 
 	public List<EntityRestaurant> getRestaurantsByKeyword(String word);
 
+	List<EntityRestaurant> getRestaurantsByCity(String word);
+
 	void saveRestaurant(EntityRestaurant restaurant);
 
 	void addRestaurant(EntityRestaurant restaurant);

@@ -20,12 +20,23 @@
 		<div id="header">
 			<h2>RESTAURANTS</h2>
 		</div>
-		<form:form action="search" method="get">
-			Search :
-			<input type="text" name="word">
-			<input type="submit" value="Submit" class="add-button">
-		</form:form>
-	</div>
+<%--		<form:form action="search" method="get">--%>
+<%--			Search :--%>
+<%--			<input type="text" name="word">--%>
+<%--			<input type="submit" value="Submit" class="add-button">--%>
+<%--		</form:form>--%>
+
+<%--		<form:form action="searchByCity" modelAttribute="restaurants" method="get">--%>
+<%--			<label for="cities" class="reservationLabel">Vyber mesto:</label><br>--%>
+<%--			<select id="cities" class="reservationInput" name="city">--%>
+<%--				<option value="kosice" selected>Košice</option>--%>
+<%--				<option value="bratislava">Bratislava</option>--%>
+<%--				<option value="presov">Prešov</option>--%>
+<%--				<option value="poprad">Poprad</option>--%>
+<%--			</select>--%>
+<%--			<input type="submit" value="Submit" class="add-button">--%>
+<%--		</form:form>--%>
+		</div>
 
 
 

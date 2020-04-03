@@ -84,7 +84,7 @@
 		<div id="exit" onClick="exit()">X</div>
 		<p class="loginHead">Registrácia zákazníka</p>
 
-		<form:form cssClass="registerCustomer" action="processAddCustomerForm" modelAttribute="customer" method="post">
+		<form:form cssClass="registerCustomer" action="customer/processAddCustomerForm" modelAttribute="customer" method="post">
 			<div class="regWrapLeft">
 				<label class="regLabel">Meno :</label><br>
 				<form:input cssClass="regInput" path="customerFirstName"/>
@@ -255,19 +255,20 @@
 	<div class="wrapWholeForm">
 		<div class="wrapFirstForm">
 			<div class="wrapFormReservation">
-				<label for="cities" class="reservationLabel">Vyber mesto:</label><br>
-				<select id="cities" class="reservationInput">
-				  <option value="kosice" selected>Košice</option>
-				  <option value="bratislava">Bratislava</option>
-				  <option value="presov">Prešov</option>
-				  <option value="poprad">Poprad</option>
-				</select>
+
+				<form:form action="restaurant/searchByCity" modelAttribute="restaurants" method="get">
+					<label for="cities" class="reservationLabel">Vyber mesto:</label><br>
+					<select id="cities" class="reservationInput" name="city">
+						<option value="kosice" selected>Košice</option>
+						<option value="bratislava">Bratislava</option>
+						<option value="presov">Prešov</option>
+						<option value="poprad">Poprad</option>
+					</select>
 			</div>
 
 			<div class="wrapFormReservation">
 				<label for="sort" class="reservationLabel">Zoradiť podľa:</label><br>
 				<select id="sort" class="reservationInput">
-				  <option value="kosice" selected>populárnosti</option>
 				  <option value="abecedne">abecedne</option>
 				  <option value="ceny">ceny</option>
 				  <option value="hodnotenia">hodnotenia</option>
@@ -297,6 +298,7 @@
 
 			<div class="wrapFormReservationSubmit">
 				<input type="submit" class="reservationSubmit" value="OK">
+
 			</div>
 			<br>
 			<br>
@@ -314,7 +316,8 @@
 
 			<div class="wrapFormReservation">
 				<label class="reservationLabel" class="reservationLabel">Hľadať:</label><br>
-				<input type="text" class="reservationInputSearch">
+					<input type="text" name="word" class="reservationInputSearch">
+				</form:form>
 			</div>
 		</div>
 	</div>
