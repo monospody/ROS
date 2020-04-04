@@ -6,6 +6,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ros.java.spring.entity.EntityRestaurant;
+import ros.java.spring.entity.EntityReviews;
 
 
 import java.util.List;
@@ -23,7 +24,18 @@ public class RestaurantDAOImpl implements RestaurantDAO {
 	public List<EntityRestaurant> getRestaurants() {
 		Session session = sessionFactory.getCurrentSession();
 		Query<EntityRestaurant> query = session.createQuery("from EntityRestaurant", EntityRestaurant.class);
-		return query.getResultList();
+		List<EntityRestaurant> restaurants = query.getResultList();
+		for (EntityRestaurant restaurant:restaurants) {
+			Query<Integer> query1 = session.createQuery("SELECT reviewsRatingStars FROM EntityReviews WHERE reviewsRestaurantId = :restaurantID", Integer.class).setParameter("restaurantID", restaurant.getRestaurantId());
+			List<Integer> res = query1.getResultList();
+			double avg = 0;
+			for (Integer re : res) {
+				avg += re;
+			}
+			avg = avg/res.size();
+			restaurant.setAverageRating(avg);
+		}
+		return restaurants;
 	}
 
 	@Override

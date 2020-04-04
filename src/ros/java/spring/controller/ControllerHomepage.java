@@ -24,6 +24,7 @@ public class ControllerHomepage {
 
         List<EntityRestaurant> restaurants = restaurantService.getRestaurants();
         model.addAttribute("restaurants", restaurants);
+
         return "homepage";
     }
 }

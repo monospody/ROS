@@ -14,7 +14,7 @@
     <link href="style.css" rel="stylesheet">
 --%>
 	<link rel="icon" href="${pageContext.request.contextPath}/resources/img/icon.png">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/merge-style.css" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/merge-style.css?v=1"/>
 </head>
 <body class="homepageCustomer">
 <div class="leftWall"></div>
@@ -219,7 +219,6 @@
 		<form class="registerCompanyNext2">
 			<p class="regLabel">O ďalšom postupe Vás budeme informovať e-mailom</p>
 
-
 			<div class="inv" onClick="exit()">
 				<input class="regSubmit" type="submit" value="OK" disabled="disabled">
 			</div>
@@ -241,58 +240,59 @@
 						<option value="presov">Prešov</option>
 						<option value="poprad">Poprad</option>
 					</select>
-			</div>
+					</div>
 
-			<div class="wrapFormReservation">
-				<label for="sort" class="reservationLabel">Zoradiť podľa:</label><br>
-				<select id="sort" class="reservationInput">
-				  <option value="abecedne">abecedne</option>
-				  <option value="ceny">ceny</option>
-				  <option value="hodnotenia">hodnotenia</option>
-				</select>
-			</div>
+						<div class="wrapFormReservation">
+							<label for="sort" class="reservationLabel">Zoradiť podľa:</label><br>
+							<select id="sort" class="reservationInput">
+							  <option value="abecedne">abecedne</option>
+							  <option value="ceny">ceny</option>
+							  <option value="hodnotenia">hodnotenia</option>
+							</select>
+						</div>
 
-			<div class="wrapFormReservation">
-				<label class="reservationLabel">Dátum:</label><br>
-				<input type="date" class="reservationInput">
-			</div>
+						<div class="wrapFormReservation">
+							<label class="reservationLabel">Dátum:</label><br>
+							<input type="date" class="reservationInput">
+						</div>
 
+						<div class="wrapFormReservation">
+							<label for="time" class="reservationLabel">Čas:</label><br>
+							<select id="time" class="reservationInput">
+							  <option value="rano" selected>ráno</option>
+							  <option value="doobedu">doobedu</option>
+							  <option value="naobed">na obed</option>
+							  <option value="poobede">poobede</option>
+							  <option value="vecer">večer</option>
+							</select>
+						</div>
 
-			<div class="wrapFormReservation">
-				<label for="time" class="reservationLabel">Čas:</label><br>
-				<select id="time" class="reservationInput">
-				  <option value="rano" selected>ráno</option>
-				  <option value="doobedu">doobedu</option>
-				  <option value="naobed">na obed</option>
-				  <option value="poobede">poobede</option>
-				  <option value="vecer">večer</option>
-				</select>
-			</div>
+						<div class="wrapFormReservationCheckBox">
+							<input type="checkbox" onchange="clickCheckBoxReservation()"><p class="optionText">Skryté možnosti</p>
+						</div>
 
-			<div class="wrapFormReservationCheckBox">
-				<input type="checkbox" onchange="clickCheckBoxReservation()"><p class="optionText">Skryté možnosti</p>
-			</div>
+						<div class="wrapFormReservationSubmit">
+							<input type="submit" class="reservationSubmit" value="OK">
+						</div>
 
-			<div class="wrapFormReservationSubmit">
-				<input type="submit" class="reservationSubmit" value="OK">
+						<br>
+						<br>
 
-			</div>
-			<br>
-			<br>
-		</div>
-		<div class="wrapSecondForm" id="visibleForm">
-			<div class="wrapFormReservation">
-				<label for="filter" class="reservationLabel">Filter:</label><br>
-				<select id="filter" class="reservationInput">
-				  <option value="sdetmi" selected>s detmi</option>
-				  <option value="skocikom">s kocikom</option>
-				  <option value="wifi">wifi</option>
-				  <option value="romantika">romantika</option>
-				</select>
-			</div>
+					</div>
 
-			<div class="wrapFormReservation">
-				<label class="reservationLabel" class="reservationLabel">Hľadať:</label><br>
+					<div class="wrapSecondForm" id="visibleForm">
+						<div class="wrapFormReservation">
+							<label for="filter" class="reservationLabel">Filter:</label><br>
+							<select id="filter" class="reservationInput">
+							  <option value="sdetmi" selected>s detmi</option>
+							  <option value="skocikom">s kocikom</option>
+							  <option value="wifi">wifi</option>
+							  <option value="romantika">romantika</option>
+							</select>
+						</div>
+					<div class="wrapFormReservation">
+
+					<label class="reservationLabel">Hľadať:</label><br>
 					<input type="text" name="word" class="reservationInputSearch">
 				</form:form>
 			</div>
@@ -302,65 +302,51 @@
 
 	<div class="wrapRestaurants">
 
-<<<<<<< HEAD
 		<c:forEach var="restaurant" items="${restaurants}">
-=======
->>>>>>> master
 
 			<section class="infoRestaurant">
-				<div class="peopleAndPriceSpace">
-				</div>
+				<div class="peopleAndPriceSpace"></div>
 
-<<<<<<< HEAD
 				<div class="groupPeople">
-					<div class="person">
-					</div>
-					<div class="person">
-					</div>
-					<div class="person">
-					</div>
+					<div class="person"></div>
+					<div class="person"></div>
+					<div class="person"></div>
 				</div>
 
 				<div class="groupPrice">
-					<div class="price">
-					</div>
-					<div class="price">
-					</div>
-					<div class="price">
-					</div>
+					<div class="price"></div>
+					<div class="price"></div>
+					<div class="price"></div>
 				</div>
 				<p class="nameRestaurant"><c:out value="${restaurant.restaurantName}"/></p>
-=======
-					<div class="groupPeople">
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-					</div>
-
-					<div class="groupPrice">
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-					</div>
-				<p class="nameRestaurant">Geronimo Express</p>
 
 				<div class="whiteWrap">
-					<div class="logoRestaurant"></div>
 
-					<div class="groupStars">
-						<div class="star staryellow">
+					<div class="logoRestaurant" style="background-image: url(${pageContext.request.contextPath}${restaurant.logo})"></div>
+
+					<c:if test="${restaurant.averageRating <= 1}">
+						<div class="groupStars">
+							<div class="star staryellow"></div>
+							<div class="star"></div>
+							<div class="star"></div>
 						</div>
-						<div class="star">
+					</c:if>
+
+					<c:if test="${restaurant.averageRating <= 2 && restaurant.averageRating > 1}">
+						<div class="groupStars">
+							<div class="star staryellow"></div>
+							<div class="star staryellow"></div>
+							<div class="star"></div>
 						</div>
-						<div class="star">
+					</c:if>
+
+					<c:if test="${restaurant.averageRating > 2}">
+						<div class="groupStars">
+							<div class="star staryellow"></div>
+							<div class="star staryellow"></div>
+							<div class="star staryellow"></div>
 						</div>
-					</div>
+					</c:if>
 
 					<p class="percent">97.8%</p>
 
@@ -375,255 +361,13 @@
 						<div class="circle">
 						</div>
 
-					 </div>
+					</div>
 
 				</div>
 
 				<div class="cyanWrap">
 					<p class="chooseText">VYBRAŤ</p>
-					<p class="fromPrice">od 5,00€</p>
-				</div>
-
-			</section>
-	<section class="infoRestaurant">
-				<div class="peopleAndPriceSpace">
-				</div>
-
-					<div class="groupPeople">
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-					</div>
-
-					<div class="groupPrice">
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-					</div>
-				<p class="nameRestaurant">Geronimo Express</p>
-
-				<div class="whiteWrap">
-					<div class="logoRestaurant"></div>
-
-					<div class="groupStars">
-						<div class="star staryellow">
-						</div>
-						<div class="star">
-						</div>
-						<div class="star">
-						</div>
-					</div>
-
-					<p class="percent">97.8%</p>
-
-					 <div class="groupCircles">
-
-						<div class="circle circlegreen">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-
-					 </div>
-
-				</div>
-
-				<div class="cyanWrap">
-					<p class="chooseText">VYBRAŤ</p>
-					<p class="fromPrice">od 5,00€</p>
-				</div>
-
-			</section>
-			<section class="infoRestaurant">
-				<div class="peopleAndPriceSpace">
-				</div>
-
-					<div class="groupPeople">
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-					</div>
-
-					<div class="groupPrice">
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-					</div>
-				<p class="nameRestaurant">Geronimo Express</p>
-
-				<div class="whiteWrap">
-					<div class="logoRestaurant"></div>
-
-					<div class="groupStars">
-						<div class="star staryellow">
-						</div>
-						<div class="star">
-						</div>
-						<div class="star">
-						</div>
-					</div>
-
-					<p class="percent">97.8%</p>
-
-					 <div class="groupCircles">
-
-						<div class="circle circlegreen">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-
-					 </div>
-
-				</div>
-
-				<div class="cyanWrap">
-					<p class="chooseText">VYBRAŤ</p>
-					<p class="fromPrice">od 5,00€</p>
-				</div>
-
-			</section>
-	<section class="infoRestaurant">
-				<div class="peopleAndPriceSpace">
-				</div>
-
-					<div class="groupPeople">
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-					</div>
-
-					<div class="groupPrice">
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-					</div>
-				<p class="nameRestaurant">Geronimo Express</p>
->>>>>>> master
-
-				<div class="whiteWrap">
-					<div class="logoRestaurant"></div>
-
-					<div class="groupStars">
-						<div class="star staryellow">
-						</div>
-						<div class="star">
-						</div>
-						<div class="star">
-						</div>
-					</div>
-
-					<p class="percent">97.8%</p>
-
-<<<<<<< HEAD
-					<div class="groupCircles">
-=======
-					 <div class="groupCircles">
->>>>>>> master
-
-						<div class="circle circlegreen">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-
-<<<<<<< HEAD
-					</div>
-
-=======
-					 </div>
-
-				</div>
-
-				<div class="cyanWrap">
-					<p class="chooseText">VYBRAŤ</p>
-					<p class="fromPrice">od 5,00€</p>
-				</div>
-
-			</section>
-			<section class="infoRestaurant">
-				<div class="peopleAndPriceSpace">
-				</div>
-
-					<div class="groupPeople">
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-						<div class="person">
-						</div>
-					</div>
-
-					<div class="groupPrice">
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-						<div class="price">
-						</div>
-					</div>
-				<p class="nameRestaurant">Geronimo Express</p>
-
-				<div class="whiteWrap">
-					<div class="logoRestaurant"></div>
-
-					<div class="groupStars">
-						<div class="star staryellow">
-						</div>
-						<div class="star">
-						</div>
-						<div class="star">
-						</div>
-					</div>
-
-					<p class="percent">97.8%</p>
-
-					 <div class="groupCircles">
-
-						<div class="circle circlegreen">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-						<div class="circle">
-						</div>
-
-					 </div>
-
->>>>>>> master
-				</div>
-
-				<div class="cyanWrap">
-					<p class="chooseText">VYBRAŤ</p>
-					<p class="fromPrice">od 5,00€</p>
+					<p class="fromPrice">od <c:out value="${restaurant.minPrice}"/>€</p>
 				</div>
 
 			</section>
