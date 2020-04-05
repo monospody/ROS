@@ -3,240 +3,77 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROS</title>
 	<link rel="icon" href="obr/icon.png">
     <link href="style.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="reservation">
-<div class="leftWallred"></div>
 
+<div class="leftWallReservation"></div>
+<div class="rightWallReservation"></div>
 
-<div class="rightWallred"></div>
 	<div class="wrapReservation">
-
-
-			<div class="logoBottom"></div>
-			<h2>Registrácia reštaurácie</h2>
-
-			<form class="registrationRestaurant">
+		<div class="logoBottom"></div>
+		<h2>Rezervácia</h2>
+		<form class="reservationForm">
+			<div class="wrapReservationContainers">
+					<div class="reservationNameRestaurant">Geronimo Express</div>
 			
-				<div class="wrapForm">
-					<label class="nameForm" style="background:#c2000b; padding:7px; border-radius:10px">Meno reštaurácie :</label><br>
-					<input class="nameFormInput" type="text" placeholder ="pr. PIZZERIA ROS"><br>
+				<div class="reservationContainer">	
+					<label class="reservationDate">
+					Dátum:
+					</label>
+					<input type="date" class="reservationInputDate">
 				</div>
-				
-				<div class="wrapForm">
-					<label class="nameForm" style="background:#c2000b; padding:7px; border-radius:10px">Sídlo reštaurácie :</label><br>
-					<input class="nameFormInput" type="text" placeholder ="pr. Hlavná 5, Košice">
-				</div>
-			
-				<div class="wrapForm">
-					<label class="nameForm" style="background:#c2000b; padding:7px; border-radius:10px">Vybrať logo :</label><br>
-					<input class="nameFormInput fileInput" type="file">
-					<p class="infoFormLogo">Podporované formáty sú .jpg a .png</p>
-				</div>
-				<div class="wrapForm">
-					<div class="uploadedLogo"></div>
-				</div>
-				
-				<div class="wrapForm100">
-					<label class="nameForm100" style="background:#c2000b; padding:7px; border-radius:10px">Vyplňte kľúčové slová reštaurácie :</label><br>
-					<input class="nameFormInput100" type="text" placeholder ="pr. hamburger, pizza, kvalita, bryndzové halušky..."><br>
-				</div>
-				
 
-				<div class="wrapForm100">
-					<label class="nameForm100" style="background:#c2000b; padding:7px; border-radius:10px">Označte niekoľko výhod Vašej reštaurácie :</label><br>
+					<div class="reservationContainer2">			
+						<label for="reservationFrom" class="reservationDate">
+						Od:
+						</label>
+						<input min="7" max="22" type="number" class="reservationInput" value="7">
+						<p class="reservationColon">:</p>
 					
-				</div>
-					
-					
-				<div class="wrapFormCheckbox">
-					
-					<label class="checkForm">wifi</label>
-					<input type="checkbox" class="checkboxAlign">
-					<label class="checkForm">s deťmi</label>
-					<input type="checkbox" class="checkboxAlign"><br>
-					<label class="checkForm">s kočíkom</label>
-					<input type="checkbox" class="checkboxAlign">
-			
-					<label class="checkForm">bez detí</label>
-					<input type="checkbox" class="checkboxAlign"><br>
-					<label class="checkForm">romantika</label>
-					<input type="checkbox" class="checkboxAlign"><br>
-					<label class="checkForm">slovenská kuchyňa</label>
-					<input type="checkbox" class="checkboxAlign">
-
-				</div>
-					
-					
-				<div class="wrapFormCheckbox">
-					
-					<label class="checkForm">wifi</label>
-					<input type="checkbox" class="checkboxAlign">
-					<label class="checkForm">s deťmi</label>
-					<input type="checkbox" class="checkboxAlign"><br>
-					<label class="checkForm">s kočíkom</label>
-					<input type="checkbox" class="checkboxAlign">
-			
-					<label class="checkForm">bez detí</label>
-					<input type="checkbox" class="checkboxAlign"><br>
-					<label class="checkForm">romantika</label>
-					<input type="checkbox" class="checkboxAlign"><br>
-					<label class="checkForm">slovenská kuchyňa</label>
-					<input type="checkbox" class="checkboxAlign">
-
-				</div>
-					
-				<div class="wrapFormCheckbox">
-					
-					<label class="checkForm">wifi</label>
-					<input type="checkbox" class="checkboxAlign">
-					<label class="checkForm">s deťmi</label>
-					<input type="checkbox" class="checkboxAlign"><br>
-					<label class="checkForm">s kočíkom</label>
-					<input type="checkbox" class="checkboxAlign">
-			
-					<label class="checkForm">bez detí</label>
-					<input type="checkbox" class="checkboxAlign"><br>
-					<label class="checkForm">romantika</label>
-					<input type="checkbox" class="checkboxAlign"><br>
-					<label class="checkForm">slovenská kuchyňa</label>
-					<input type="checkbox" class="checkboxAlign">
-
-				</div>
-				
-				
-				<div class="wrapFormCheckbox">
-					
-					<label class="checkForm">wifi</label>
-					<input type="checkbox" class="checkboxAlign">
-					<label class="checkForm">s deťmi</label>
-					<input type="checkbox" class="checkboxAlign"><br>
-					<label class="checkForm">s kočíkom</label>
-					<input type="checkbox" class="checkboxAlign">
-			
-					<label class="checkForm">bez detí</label>
-					<input type="checkbox" class="checkboxAlign"><br>
-					<label class="checkForm">romantika</label>
-					<input type="checkbox" class="checkboxAlign"><br>
-					<label class="checkForm">slovenská kuchyňa</label>
-					<input type="checkbox" class="checkboxAlign">
-
-				</div>
-				
-				
-				<div class="wrapForm100">
-				
-						<label class="nameForm100" style="background:#c2000b; padding:7px; border-radius:10px">Vyplňte otváracie hodiny Vašej reštaurácie :</label><br>
-				</div>
-						
-				<div class="wrapHourForm">
-					<p class="hourFormHead">Pondelok</p>
-					<p class="hourForm">od</p>
-					<input class="hourInput" type="number">
-					<p class="hourForm">:</p>
-					<input class="hourInput" type="number">
-					<p class="hourForm" style="margin-left:20px">do</p>
-					<input class="hourInput" type="number">
-					<p class="hourForm">:</p>
-					<input class="hourInput" type="number">
-					<p class="hourFormClosed">Zatvorené</p>
-					<input type="checkbox">
-				</div>
-					<div class="wrapHourForm">
-						<p class="hourFormHead">Utorok</p>
-						<p class="hourForm">od</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm">:</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm" style="margin-left:20px">do</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm">:</p>
-						<input class="hourInput" type="number">
-						<p class="hourFormClosed">Zatvorené</p>
-						<input type="checkbox">
+						<select id="reservationFrom" class="reservationSelect">
+						  <option value="00">00</option>
+						  <option value="10">10</option>
+						  <option value="20">20</option>
+						  <option value="30">30</option>
+						  <option value="40">40</option>
+						  <option value="50">50</option>
+						</select>	
 					</div>
 						
-					<div class="wrapHourForm">
-						<p class="hourFormHead">Streda</p>
-						<p class="hourForm">od</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm">:</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm" style="margin-left:20px">do</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm">:</p>
-						<input class="hourInput" type="number">
-						<p class="hourFormClosed">Zatvorené</p>
-						<input type="checkbox">
-					</div>
-						
-					<div class="wrapHourForm">
-						<p class="hourFormHead">Štvrtok</p>
-						<p class="hourForm">od</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm">:</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm" style="margin-left:20px">do</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm">:</p>
-						<input class="hourInput" type="number">
-						<p class="hourFormClosed">Zatvorené</p>
-						<input type="checkbox">
-					</div>
-						
-					<div class="wrapHourForm">
-						<p class="hourFormHead">Piatok</p>
-						<p class="hourForm">od</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm">:</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm" style="margin-left:20px">do</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm">:</p>
-						<input class="hourInput" type="number">
-						<p class="hourFormClosed">Zatvorené</p>
-						<input type="checkbox">
-					</div>
-						
-					<div class="wrapHourForm">
-						<p class="hourFormHead">Sobota</p>
-						<p class="hourForm">od</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm">:</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm" style="margin-left:20px">do</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm">:</p>
-						<input class="hourInput" type="number">
-						<p class="hourFormClosed">Zatvorené</p>
-						<input type="checkbox">
-					</div>
-		
-					<div class="wrapHourForm">
-						<p class="hourFormHead">Nedeľa</p>
-						<p class="hourForm">od</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm">:</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm" style="margin-left:20px">do</p>
-						<input class="hourInput" type="number">
-						<p class="hourForm">:</p>
-						<input class="hourInput" type="number">
-						<p class="hourFormClosed">Zatvorené</p>
-						<input type="checkbox">
-					</div>
+					<div class="reservationContainer2">			
+						<label for="reservationTo" class="reservationDate">
+						Do:
+						</label>
+						<input min="7" max="22" type="number" class="reservationInput" value="7">
+						<p class="reservationColon">:</p>
 					
-				<div class="wrapForm100">
-				
-						<label class="nameForm100" style="background:#c2000b; padding:7px; border-radius:10px">Označte políčka ktoré budú označované ako Vaše stoly v reštaurácií :</label><br>
-				</div>
-					
-				<div class="wrapFormGrid">
+						<select id="reservationTo" class="reservationSelect">
+						  <option value="00">00</option>
+						  <option value="10">10</option>
+						  <option value="20">20</option>
+						  <option value="30">30</option>
+						  <option value="40">40</option>
+						  <option value="50">50</option>
+						</select>
+					</div>
+						<p class="reservationInfo">V prípade predĺženia rezervácie na mieste je nutné kontaktovať personál.</p>
+			</div>
+			
+			<section class="reservationTable">
+				<p class="reservationTableText">Vyberte si stôl a počet osôb:</p>
+			
+			<div class="wrapGridTableInfo">
+			<div class="reservationGrid">
+				<div class="wrapLines">
 					<div class="line">	
-
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -276,6 +113,10 @@
 					</div>
 					<div class="line">	
 
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -352,9 +193,17 @@
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
 						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
 					</div>
 					<div class="line">	
 
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -431,9 +280,17 @@
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
 						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
 					</div>
 					<div class="line">	
 
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -509,41 +366,6 @@
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
 						</label>
-					</div>
-					<div class="line">	
-
-						<label class="container">
-						  <input type="checkbox">
-						  <span class="checkmark"></span>
-						</label>
-						<label class="container">
-						  <input type="checkbox">
-						  <span class="checkmark"></span>
-						</label>
-						<label class="container">
-						  <input type="checkbox">
-						  <span class="checkmark"></span>
-						</label>
-						<label class="container">
-						  <input type="checkbox">
-						  <span class="checkmark"></span>
-						</label>
-						<label class="container">
-						  <input type="checkbox">
-						  <span class="checkmark"></span>
-						</label>
-						<label class="container">
-						  <input type="checkbox">
-						  <span class="checkmark"></span>
-						</label>
-						<label class="container">
-						  <input type="checkbox">
-						  <span class="checkmark"></span>
-						</label>
-						<label class="container">
-						  <input type="checkbox">
-						  <span class="checkmark"></span>
-						</label>
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -587,9 +409,60 @@
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
 						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
 					</div>
 					<div class="line">	
 
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="line">	
+
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -628,70 +501,207 @@
 						</label>
 					</div>
 				</div>
+	
 			
 			
-				<div class="wrapForm100">
-				
-					<label class="nameForm100" style="background:#c2000b; padding:7px; border-radius:10px">Približná cenová kategória reštaurácie :</label><br>
-					
-					<div class="wrapPrice">	
-						<label class="priceForm">€</label>
-						<input type="checkbox">
-						<label class="priceForm">€€</label>
-						<input type="checkbox">
-						<label class="priceForm">€€€</label>
-						<input type="checkbox">
-					</div>
+			</div>
+			
+			<div class="reservationTableInfo">
+				<div class="reservationChoose">
+					<p class="reservationChooseText">Stôl :</p>
+					<p class="reservationTableName">H1</p><br>
+					<p class="reservationChooseText">Osoby :</p>
+					<input type="number" value="5" class="reservationChooseInput">
 				</div>
-			
-			
-				<div class="wrapForm100">
-				
-					<label class="nameForm100" style="background:#c2000b; padding:7px; border-radius:10px">Vyplňte jedálny lístok :</label>
+				<div class="reservationLegendTables">
 					
-					<div id="wrapMenuCategory">
-						<input type="text" class="categoryName" placeholder="Názov kategórie">
+					<div class="blueCircle"></div>
+					<p class="reservationLegendText">voľný stôl</p>
+					
+					
+					<div class="redCircle"></div>
+					<p class="reservationLegendText">obsadený stôl</p>
+				
+				</div>
+				<div class="reservationLegendTables">
+					<div class="whiteSquare"></div>
+					<p class="reservationLegendText">chodba</p>
+					
+					
+					<div class="yellowCircle"></div>
+					<p class="reservationLegendText">váš stôl</p>
+					
+				</div>
+				
+			</div>
+			
+			</div>
+				<p class="reservationTableText2">Jedálny lístok reštaurácie :</p>
+				<div id="wrapMenuCategory">
+						<p class="categoryName">Polievky</p>
 						<div class="aboutMenu">
-							<p class="aboutMenuText">Meno</p>
-							<p class="aboutMenuText">Alergény</p>
-							<p class="aboutMenuText">Počet</p>
-							<p class="aboutMenuText">Cena</p>
+							<p class="aboutMenuText" style="flex-grow:5;">Meno</p>
+							<p class="aboutMenuText aler" style="flex-grow:1;">Alergény</p>
+							<p class="aboutMenuText" style="flex-grow:3;">Suroviny</p>
+							<p class="aboutMenuText" style="flex-grow:2;">Cena</p>
+							<p class="aboutMenuText" style="flex-grow:1;">Počet</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
 						</div>
 						
 						
-						<div id="aboutMenuInputs">
-							<input type="text" class="writtenMenu" placeholder="pr. Kuracie prsia na smotane so zemiakmi">
-							<input type="text" class="writtenMenu" placeholder="pr. 7">
-							<input type="text" class="writtenMenu" placeholder="pr. 100g kuracie prsia, 150g zemiaky">
-							<input type="text" class="writtenMenu" placeholder="pr. 3,35€">
+				</div>	
+				<div id="wrapMenuCategory">
+						<p class="categoryName">Polievky</p>
+						<div class="aboutMenu">
+							<p class="aboutMenuText" style="flex-grow:5;">Meno</p>
+							<p class="aboutMenuText aler" style="flex-grow:1;">Alergény</p>
+							<p class="aboutMenuText" style="flex-grow:3;">Suroviny</p>
+							<p class="aboutMenuText" style="flex-grow:2;">Cena</p>
+							<p class="aboutMenuText" style="flex-grow:1;">Počet</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
 						</div>
 						
-						<div id="wrapMenuInputs"></div>
-						
-						<div class="addAboutMenuInputs" onclick="addItem()">+</div>
-					</div>
-					
-					
-				<div id="wrapMenuCat"></div>
-					
-					<div class="addNewCategory" onclick="addCategory()">+</div>
-					
-					
-					
+				</div>	
+				
+				<br>
+				<div class="wrapSubmitReservation">
+					<input type="submit" class="reservationSubmit" value="Rekapitulácia objednávky">
 				</div>
 			
+			</section>
 			
 			
 			
-			
-			
-			
-			
-			
-			
-				</div>
 			</form>
-	</div>
+		</div>
 
     <script src="js/app.js"></script>
 </body>
