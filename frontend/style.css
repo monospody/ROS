@@ -1,4 +1,5 @@
 body{
+	width:100%;
 	height:auto;
 	padding:0;
 	margin:0 auto;
@@ -24,8 +25,17 @@ body{
   font-family: NunitoBold;
   src: url(font/Nunito-Bold.ttf);
 }
+@font-face {
+  font-family: NunitoItalic;
+  src: url(font/Nunito-Italic.ttf);
+}
 input { 
 	outline: none; 
+}
+a{
+	text-decoration: none;
+	color:white;
+	border:none;
 }
 /*
 ::-webkit-scrollbar {
@@ -209,7 +219,6 @@ hr{
 	text-align:center;
 	font-size:40px;
 	font-family:NunitoBold;
-	border-bottom:4px solid #8c314d;
 	margin-top:30px;
 	margin-bottom:30px;
 }
@@ -279,7 +288,6 @@ hr{
 	text-align:center;
 	font-size:40px;
 	font-family:NunitoBold;
-	border-bottom:4px solid #8c314d;
 	margin-top:30px;
 	margin-bottom:30px;
 }
@@ -295,38 +303,32 @@ hr{
 	margin-bottom:10px;
 	cursor:pointer;
 }
+
+
+
+/*< registercustomer.html */
 .registerCustomer{
 	text-align:center;
 
 }
 #registerCustomer{
-	width:700px;
-	height:450px;
-	position:absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	background:#222a31;
+	width:100%;
+	height:auto;
 	color:white;
 	border-radius:15px;
-	border:2px solid #323a3f;
 	box-shadow: 0px 0px 83px 17px rgba(0,0,0,0.75);
 	text-align:left;
-	display:none;
 }
 .regInput{
-	width:90%;
+	width:100%;
 	height:30px;
-	margin:0 auto;
 	margin-top:10px;
 	border-radius:10px;
 	margin-bottom:10px;
 	border: 2px solid #495054;
 	font-family:NunitoBold;
 	text-align:left;
-	margin-left:10px;
-	padding-left:5px;
-	
+	padding:3px;
 }
 .regLabel{
 	margin-left:10px;
@@ -334,15 +336,14 @@ hr{
 }
 .regWrapRight{
 	width:280px;
-	display:inline-block;
 	text-align:left;
 	margin-left:-5px;
-	border-left: 2px solid #495054;
+	margin:0 auto;
 }
 .regWrapLeft{
 	width:280px;
-	display:inline-block;
 	text-align:left;
+	margin:0 auto;
 }
 .regSubmit {
 	background: #ac3757;
@@ -355,47 +356,23 @@ hr{
 	border-bottom:4px solid #8c314d;
 	border-radius:5px;
 	margin-top:20px;
+	margin-bottom:20px;
 	cursor:pointer;
 }
+
+/*registercustomer.html >*/
+/*< registercompany.html */
 .registerCompany{
 	text-align:center;
 }
 #registerCompany{
-	width:700px;
-	height:450px;
-	position:absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	background:#222a31;
+	width:100%;
+	height:auto;
 	color:white;
 	border-radius:15px;
-	border:2px solid #323a3f;
 	box-shadow: 0px 0px 83px 17px rgba(0,0,0,0.75);
 	text-align:left;
-	display:none;
 }
-
-.registerCompanyNext{
-	text-align:center;
-
-}
-#registerCompanyNext{
-	width:700px;
-	height:450px;
-	position:absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	background:#222a31;
-	color:white;
-	border-radius:15px;
-	border:2px solid #323a3f;
-	box-shadow: 0px 0px 83px 17px rgba(0,0,0,0.75);
-	text-align:left;
-	display:none;
-}
-
 .registerCompanyNext2{
 	text-align:center;
 
@@ -415,19 +392,22 @@ hr{
 	text-align:left;
 	display:none;
 }
+/*registercompany.html >*/
+
+
 /* LOGIN LOGOUT > */
 
 
 /* < MENU in profilecompany.html */
 .menu {
-	width:240px;
+	width:230px;
 	min-height:100vh;
 	height:auto;
 	box-sizing:border-box;
-	border-right:100px solid #c2000b;
-	background:#a6000a;
+	border-right:85px solid #222a31;
+	   background:#283941;
 	display:inline-block;
-	margin-left:-140px;
+	margin-left:-150px;
 	z-index:2;
 }
 .menu:hover {
@@ -440,7 +420,7 @@ hr{
 }
 .liMenu {
 	margin:0 auto;
-	width:240px;
+	width:230px;
 	height:70px;
 	list-style:none;
 	margin-bottom:20px;
@@ -450,14 +430,14 @@ hr{
 	text-decoration: none;
 }
 .menuText {
-	width:140px;
+	width:150px;
 	height:60px;
 	color:white;
 	display:inline-block;
 	text-align:right;
 	margin:0 auto;
-	margin-right:20px;
-	background:#c2000b;
+	margin-right:10px;
+	background:#222a31;
 	padding-top:10px;
 	overflow:auto;
 	margin-top:20px;
@@ -538,15 +518,15 @@ hr{
 
 /* CONTAINERS in profilecompany.html > */
 .twoThirdContainer{
-	width:600px;
+	width:60%;
 	height:40vh;
 	background:#222a31;
 	border-radius:10px;
 	display:inline-block;
-	margin-left:10px;
+	margin-left:2%;
 }
 .thirdContainer{
-	width:300px;
+	width:35%;
 	height:40vh;
 	background:#222a31;
 	border-radius:10px;
@@ -555,18 +535,21 @@ hr{
 .wrapContainers{
 	display:block;
 	width:90%;
-	overflow:auto;
+	/*overflow:auto;*/
+	margin-left:2%;
+	margin-right:2%;
+	margin-top:20px;
 }
 .wrapMenu {
 	display:inline-block;
 }
 .afterLogin {
-	width:88%;
+	width:90%;
 	color:white;
 	box-sizing:border-box;
 	display:inline-block;
 	min-height:100vh;
-	overflow-x: auto;
+	/*overflow-x: auto;*/
 	position:absolute;
 	white-space: nowrap;
 	
@@ -575,7 +558,12 @@ hr{
 	margin:30px;
 	font-size:30px;
 }
-
+.headTextContainer{
+	width:100%;
+	margin:0 auto;
+	font-size:25px;
+	padding:10px;
+}
 
 
 /* CONTAINERS in profilecompany.html > */
@@ -585,182 +573,152 @@ hr{
 /* < reservation.html */
 
 
-.leftWallred{
+.leftWallReservation{
 	width:2%;
-	min-height:400vh;
-	background:#a6000a;
+	height:100vh;
+	background:#1da4b1;
 	position:absolute;
+	position:fixed;
+	display:none;
 }
-.rightWallred{
+.rightWallReservation{
 	width:2%;
-	min-height:400vh;
-	background:#a6000a;
+	height:100vh;
+	background:#1da4b1;
 	position:absolute;
 	right:0;
 	top:0;
+	position:fixed;
+	display:none;
 	
 }
 .logoBottom{
-	width:100px;
+	width:50px;
 	height:50px;
 	background:url(obr/logo.png);
 	background-size:contain;
 	background-repeat:no-repeat;
 	display:inline-block;
-	margin:25px;
-	margin-right:3%;
+	margin-right:20px;
 	position:fixed;
 	right:0;
-	bottom:0;
+	bottom:10px;
 }
 h2 {
-	width:500px;
+	width:100%;
 	margin:0 auto;
 	height:50px;
-	text-align:center;
+	text-align:left;
 	color:white;
-	font-size:45px;
-	padding:15px;
-	border-bottom:3px solid white;
+	font-size:30px;
+	padding-left:15px;
 	padding-top:20px;
 }
-.nameForm{
-	margin-left:5%;
-	margin-right:5%;
-	color:white;
-	display:inline-block;
-}
-.nameFormInput{
-	width:90%;
-	height:30px;
-	display:inline-block;
-	border:none;
-	border-radius:15px;
-	margin:5px;
-	padding:5px;
-	font-family:Nunito;
-	margin-left:5%;
-	margin-right:5%;
-	background:white;
-}
-.wrapForm {
-	width:48%;
-	display:inline-block;
-	margin-top:60px;
-	position:relative;
-}
 .wrapReservation {
-	width:70%;
+	width:100%;
 	margin:0 auto;
-	
 }
-.infoFormLogo{
-	width:48%;
+.reservationLabel{
 	color:white;
-	margin-left:15px;
-	font-size:14px;
-	text-align:right;
-	float:right;
-	margin-right:5%;
 }
-.fileInput {
-	padding-left:10px;
-	padding-top:10px;
-	padding-right:0px;
-
-}
-.uploadedLogo{
-	width:200px;
-	height:200px;
-	background:white;
-	position:absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-.wrapForm100 {
-	width:95%;
-	display:inline-block;
-	margin-top:50px;
-}
-.checkForm{
-	width:85%;
+.reservationNameRestaurant{
 	color:white;
-	display:inline-block;
-	text-align:right;
-}
-.checkboxAlign {
-	display:inline-block;
-	float:right;
-}
-.wrapFormCheckbox {
-	display:inline-block;
-	width:200px;
-	margin-left:5%;
-}
-.nameForm100{
-	width:102%;
-	color:white;
-	text-align:center;
-	margin-bottom:20px;
-	display:inline-block;
-	font-size:20px;
+	background:#ac3757;
+	width:100%;
+	padding-top:20px;
+	padding-bottom:20px;
 	margin-top:10px;
-}
-.nameFormInput100{
-	width:102%;
-	height:30px;
-	display:inline-block;
-	border:none;
-	border-radius:15px;
-	margin:5px;
-	padding:5px;
-	font-family:Nunito;
-	background:white;
-}
-.hourForm{
-	color:white;
-	font-family:Nunito;
-	display:inline-block;
-}
-.hourFormHead{
-	color:white;
 	font-family:NunitoBold;
-	display:inline-block;
-	font-size:20px;
-	margin-right:10px;
+	width:100%;
+	text-align:center;
 }
-.hourFormClosed{
+.reservationDate{
 	color:white;
-	display:inline-block;
+	display:block;
+}
+.reservationInputDate{
+	font-family:NunitoBold;
+	padding:13px;
+	margin-top:10px;
 	font-size:15px;
-	margin-left:20px;
-}
-.hourInput {
-	display:inline-block;
-	
-	width:30px;
-	height:30px;
-	display:inline-block;
+	padding-top:15px;
+	background:#283941;
 	border:none;
-	border-radius:5px;
-	padding:5px;
-	font-family:Nunito;
-	background:white;
+	color:white;
+	border-bottom:2px solid white;
+	border-radius:10px;
+	border:none;
+	color:white;
+	margin-bottom:10px;
 }
-.wrapHourForm{
-	text-align:center;
+.reservationInput{
+	width:40px;
+	height:40px;
+	padding-left:10px;
+	font-size:15px;
+	font-family:NunitoBold;
+	background:#283941;
+	border-radius:10px;
+	border:none;
+	color:white;
+}
+.reservationColon{
+	display:inline-block;
+	font-size:25px;
+	color:white;
+	margin:10px;
+	
+}
+.reservationSelect{
+	width:60px;
+	height:40px;
+	padding:8px;
+	font-size:15px;
+	font-family:NunitoBold;
+	background:#283941;
+	border-radius:10px;
+	border:none;
+	color:white;
+}
+.reservationContainer{
+	margin-right:40px;
+	margin-top:20px;
+	display:inline-block;
+}
+.reservationContainer2{
+	margin-top:20px;
+	width:100%;
+	display:inline-block;
+}
+.reservationInfo{
+	color:white;
+	font-size:12px;
+	width:100%;
+}
+.reservationTable {
+	width:100%;
+}
+
+.reservationGrid{
+	width:90%;
+	height:300px;
+	display:block;
+	background:#283941;
 	margin:0 auto;
+	border-radius:15px;
+	margin-bottom:40px;
 }
-.wrapFormGrid {
-	width:95%;
+.wrapReservationContainers{
+	width:100%;
 	text-align:center;
+	
 }
+
 .container {
   display: block;
   position: relative;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .container input {
@@ -774,8 +732,8 @@ h2 {
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 18px;
+  width: 18px;
   background-color: #eee;
 }
 
@@ -789,63 +747,225 @@ h2 {
 }
 .line {
 	display:inline-block;
-	margin: 10px;
+	margin: 7px;
 }
-.priceForm {
-	color:white;
-	font-family:Nunito;
-	margin:10px;
-}
-.wrapPrice {
+.wrapLines{
+	width:98%;
+	padding-top:10px;
 	text-align:center;
 }
-.categoryName{
-	height:20px;
+.reservationTableInfo{
+	display:inline-block;
+	width:100%;
+}
+.reservationTableText{
+	width:100%;
+	font-size:30px;
+	text-align:center;
+	color:white;
+}
+.reservationTableText2{
+	width:100%;
+	font-size:30px;
+	text-align:center;
+	color:white;
+	margin-top:40px;
+	margin-bottom:20px;
+}
+.reservationChoose{
+	width:90%;
+	height:150px;
+	background:#ac3757;
+	border-radius:30px;
+	text-align:center;
+	margin:0 auto;
+}
+.reservationChooseText{
+	display:inline-block;
+	font-size:30px;
+	color:white;
+	margin:0 auto;
+	margin-top:20px;
+	font-family:NunitoBold;
+}
+.reservationTableName{
+	display:inline-block;
+	font-size:30px;
+	color:white;
+	margin:0 auto;
+	background:#653544;
 	padding:10px;
+	border-radius:15px;
+}
+.reservationChooseInput{
+	width:70px;
+	display:inline-block;
+	font-size:30px;
+	color:white;
+	margin:0 auto;
+	background:#653544;
+	padding:10px;
+	border-radius:15px;
 	border:none;
-	background:#c2000b;
+	text-align:center;
+	margin-left:10px;
+}
+.reservationLegendTables{
+	width:100%;
+	text-align:center;
+}
+.whiteSquare{
+	width:15px;
+	height:15px;
+	background:white;
+	display:inline-block;
+}
+.reservationLegendText{
+	display:inline-block;
+	font-size:15px;
+	color:white;
+}
+.yellowCircle{
+	margin-left:30px;
+	width:15px;
+	height:15px;
+	background:#ffff0d;
+	border-radius:20px;
+	display:inline-block;
+	
+}
+.blueCircle{
+	width:15px;
+	height:15px;
+	background:#8fb5c1;
+	border-radius:20px;
+	display:inline-block;
+	
+}
+.redCircle{
+	margin-left:30px;
+	width:15px;
+	height:15px;
+	background:#ac3757;
+	border-radius:20px;
+	display:inline-block;
+	
+}
+.reservationSubmit{
+	width:250px;
+	height:40px;
+	background:#ac3757;
+	border:none;
+	font-size:18px;
+	color:white;
+	font-family:NunitoBold;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.wrapSubmitReservation{
+	text-align:center;
+}
+.materials{
+	flex-grow:3;
+	font-size:11px;
+}
+.counter {
+	flex-grow:2; 
+	font-size:15px; 
+	font-family:NunitoBold;
+}
+.plusButton{
+	flex-grow:1;
+	background:#73be1e !important;
+	color:white;
+	font-family:NunitoBold;
+	font-size:20px;
+	width:10px;
+	height:auto;
+	padding-bottom:20px;
+	border-radius:5px; 
+	margin-top:5px;
+}
+.minusButton {
+	flex-grow:1;
+	background:#c2000b !important;
+	color:white;
+	font-family:NunitoBold;
+	font-size:20px; 
+	width:10px; 
+	height:auto; 
+	padding-bottom:20px; 
+	border-radius:5px; 
+	margin-top:5px;
+}
+.categoryName{
+	width:100%;
+	height:30px;
+	padding-top:10px;
+	padding-bottom:10px;
+	border:none;
+	background:#ac3757;
 	font-family:NunitoBold;
 	border-radius:10px;
 	color:white;
 	font-size:20px;
 	margin-top:20px;
+	display:inline-block;
 }
 .categoryName::placeholder { 
-  color: #fb5048;
-  opacity: 1; /* Firefox */
+  color: white;
+  opacity: 1; 
+}
+#wrapMenuCategory{
+	width:100%;
+	text-align:center;
+	margin:0 auto;
 }
 .aboutMenu{
-	background:#fb5048;
-	width: 105%;
-	display: flex;
+	width: 30%;
 	border-radius:10px;
-	margin-top:10px;
+	display:flex;
+}
+.aboutMenu2{
+	width: 100%;
+	border-radius:10px;
+	margin-top:5px;
+	display:flex;
 }
 .aboutMenuText{
-	flex-basis: 100%;
 	text-align: center;
-	border-radius:10px;
-	background:#222a31;
+	background:#283941;
 	color:white;
 	margin:5px;
+	padding:10px;
+	font-size:14px;
 }
 #aboutMenuInputs{
 	background:white;
-	width: 105%;
+	width: 100%;
 	display: flex;
 	border-radius:10px;
 	margin-top:10px;
 }
-.writtenMenu{
-	width:50px;
-	padding:5px;
-	flex-basis: 100%;
-	border-radius:10px;
-	border:none;
-	background:#e5e5e5;
+.aboutMenuTextFood{
+	text-align: center;
+	border-radius:4px;
+	background:white;
 	color:black;
 	margin:5px;
-	font-family:Nunito;
+	padding:5px;
+	font-size:14px;
+	
+}
+.wrapReservationPrice{
+	width:45px;
+	text-align: center;
+	border-radius:10px;
+	background:black;
+	color:white;
+	margin:5px;
+	
+	
 }
 .addAboutMenuInputs{
 	margin-top:10px;
@@ -871,19 +991,18 @@ h2 {
 	font-size:30px;
 	text-align:center;
 	padding-bottom:10px;
-	float:right;
-	margin-right:-5%;
 	cursor:pointer;
 	
 }
-
-
+.aler{
+	display:block;
+}
 
 /* reservation.html > */
 
 
-/* < reservation form in index.html */
-#reservation{
+/* < search form in index.html */
+#search{
 	width:95%;
 	margin:0 auto;
 	height:auto;
@@ -896,13 +1015,13 @@ h3 {
 	text-align:center;
 	padding-top:40px;
 }
-.reservationLabel{
+.searchLabel{
 	width:100%;
 	display:inline-block;
 	color:white;
 	text-align: left;
 }
-.wrapFormReservation{	
+.wrapFormSearch{	
 	height:70px;
 	display:inline-block;
 	margin:5px;
@@ -912,7 +1031,7 @@ h3 {
 	font-size:12px;
 	color:white;
 }
-.reservationInput{
+.searchInput{
 	width:150px;
 	height:30px;
 	border:none;
@@ -929,16 +1048,15 @@ h3 {
 	justify-content: left;
 	display:none;
 }
-.wrapFormReservationCheckBox{
+.wrapFormSearchCheckBox{
 	margin-top:40px;
 	height:40px;
 }
-.wrapFormReservationSubmit{
-	margin:10px;
-	margin-top:40px;
+.wrapFormSearchSubmit{
+	margin:5px;
 	height:40px;
 }
-.reservationSubmit{
+.searchSubmit{
 	width:70px;
 	font-family:NunitoBold;
 	padding:10px;
@@ -946,7 +1064,7 @@ h3 {
 	background:#ac3757;
 	color:white;
 }
-.reservationInputSearch{
+.searchInputSearch{
 	width:150px;
 	height:20px;
 	border:none;
@@ -959,32 +1077,34 @@ h3 {
 	margin:0 auto;
 	
 }
-/* reservation form in index.html > */
-
+/* search form in index.html > */
 
 /* < restaurants in index.html */
 .wrapRestaurants {
 	padding-top:60px;
 	padding-bottom:80px;
 	text-align:center;
-	
 }
 .infoRestaurant{
-	width:200px;
-	height:340px;
+	width:300px;
+	height:350px;
 	background:#ac3757;
 	padding-top:15px;
 	position:relative;
-	margin-top:20px;
+	margin-bottom:80px;
 	display:inline-block;
 	margin-left:10px;
 	margin-right:10px;
 }
 .nameRestaurant{
-	width:80%;
+	width:78%;
+	height:60px;
 	font-size:20px;
 	color:white;
 	margin:0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	text-align:center;
 }
 .peopleAndPriceSpace {
@@ -1002,7 +1122,6 @@ h3 {
 	  position:absolute;
 	  right:0;
 	  top:0;
-	
 }
 .person{
 	width:7px;
@@ -1104,7 +1223,7 @@ h3 {
 .cyanWrap{
 	background:#46b4b7;
 	width:100%;
-	height:25px;
+	height:50px;
 	position:relative;
 }
 .chooseText{
@@ -1113,16 +1232,354 @@ h3 {
 	text-align:center;
 	font-family:NunitoBold;
 	display:inline-block;
-	font-size:16px;
+	font-size:20px;
 	color:white;
+	margin-top:10px;
 }
 .fromPrice{
 	position:absolute;
-	font-size:13px;
+	font-size:15px;
 	color:white;
-	right:5px;
-	bottom:0;
-	top:-8px;
+	right:10px;
+	top:10px;
 }	
 
 /* restaurants in index.html > */		
+
+
+	/*reservation.html >*/
+
+
+    @media only screen and (max-device-width: 480px) {
+		.aler{
+			display:none;
+		}
+		.reservationContainer2{
+			width:100%;
+			margin:0 auto;
+			display:block;
+		}
+		.reservationContainer {
+			margin-right:0px;
+		}
+    }
+    @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+		.aler{
+			display:block;
+		}
+		
+    }
+    @media only screen and (min-device-width: 481px) {
+		.reservationContainer{
+			width:180px;
+		}
+		.reservationContainer2{
+			width:180px;
+		}
+		#wrapMenuCategory{
+			width:90%;
+		}
+		
+		.leftWallReservation{
+			display:block;
+		}
+		.rightWallReservation{
+			display:block;
+			
+		}	
+		.registerCustomer{
+			text-align:center;
+
+		}
+		#registerCustomer,#registerCompany{
+			width:70%;
+			margin:0 auto;
+			margin-bottom:50px;
+		}		
+		
+		
+	}
+   @media only screen and (min-width: 960px) {
+		.reservationGrid{
+			width:350px;
+			height:350px;
+			background:#283941;
+			display:inline-block;
+		}
+		.reservationTableInfo{
+			width:50%;
+			margin-top:100px;
+			float:right;
+			display:inline-block;
+		}
+		.wrapGridTableInfo{
+			width:80%;
+			margin:0 auto;
+		}
+		.container {
+		  font-size: 24px;
+		}
+		.checkmark {
+		  height: 20px;
+		  width: 20px;
+		}
+		.line {
+			margin: 10px;
+		}
+		.wrapLines{
+			margin-top:0px;
+		}	
+		h2{
+			margin-left:2%;
+		}
+		.leftWallReservation{
+			display:block;
+		}
+		.rightWallReservation{
+			display:block;
+			
+		}
+		.registerCustomer{
+			text-align:center;
+
+		}
+		#registerCustomer,#registerCompany{
+			width:80%;
+			margin:0 auto;
+			margin-bottom:50px;
+		}	
+		.regWrapLeft{
+			display:inline-block;
+		}	
+		.regWrapRight{
+			margin-left:20px;
+			display:inline-block;
+			margin-bottom:30px;
+		}
+		.regSubmit {
+			display:block;
+			margin:0 auto;
+		}
+		
+		
+		
+    }
+    @media only screen and (min-width: 1440px) {
+		.reservationGrid{
+			background:white;
+		}
+		.reservationGrid{
+			width:510px;
+			height:490px;
+			background:#283941;
+			display:inline-block;
+		}
+		.reservationTableInfo{
+			width:50%;
+			text-align:center;
+			margin-top:100px;
+			float:right;
+			display:inline-block;
+		}
+		.wrapGridTableInfo{
+			width:80%;
+			margin:0 auto;
+		}
+		.container {
+		  font-size: 34px;
+		}
+		.checkmark {
+		  height: 29px;
+		  width: 29px;
+		}
+		.line {
+			margin: 18px;
+		}
+		.wrapLines{
+			margin-top:0px;
+			padding-top:0px;
+		}	
+		.reservationChoose {
+			height:250px;
+		}
+		.reservationChoose{
+			height:250px;
+		}
+		.reservationChooseText{
+			font-size:50px;
+			margin-top:30px;
+		}
+		.reservationTableName{
+			font-size:50px;
+		}
+		.reservationChooseInput{
+			font-size:50px;
+		}
+		.reservationLegendTables{
+			width:40%;
+			display:inline-block;
+			text-align:center;
+		}
+	}
+    @media only screen and (min-width: 2000px) {
+		
+		.reservationGrid{
+			background:white;
+		}
+		.reservationGrid{
+			width:700px;
+			height:700px;
+			background:#283941;
+			display:inline-block;
+		}
+		.reservationTableInfo{
+			width:50%;
+			text-align:center;
+			margin-top:100px;
+			float:right;
+			display:inline-block;
+		}
+		.wrapGridTableInfo{
+			width:80%;
+			margin:0 auto;
+		}
+		.container {
+		  font-size: 48px;
+		}
+		.checkmark {
+		  height:50px;
+		  width: 50px;
+		}
+		.line {
+			margin: 25px;
+		}
+		.wrapLines{
+			margin-top:0px;
+			padding-top:0px;
+		}	
+		.reservationChoose{
+			height:400px;
+		}
+		.reservationChooseText{
+			font-size:80px;
+			margin-top:60px;
+		}
+		.reservationTableName{
+			font-size:80px;
+		}
+		.reservationChooseInput{
+			font-size:80px;
+		}
+		.reservationLegendTables{
+			width:100%;
+			display:inline-block;
+			text-align:center;
+		}
+		
+		.whiteSquare{
+			width:35px;
+			height:35px;
+			background:white;
+			display:inline-block;
+		}
+		.reservationLegendText{
+			display:inline-block;
+			font-size:30px;
+			color:white;
+		}
+		.yellowCircle{
+			margin-left:30px;
+			width:35px;
+			height:35px;
+			background:#ffff0d;
+			border-radius:20px;
+			display:inline-block;
+			
+		}
+		.blueCircle{
+			width:35px;
+			height:35px;
+			background:#8fb5c1;
+			border-radius:20px;
+			display:inline-block;
+			
+		}
+		.redCircle{
+			margin-left:30px;
+			width:35px;
+			height:35px;
+			background:#ac3757;
+			border-radius:20px;
+			display:inline-block;
+			
+		}
+		.reservationTableText{
+			font-size:50px;
+		}
+		.reservationInfo{
+			font-size:25px;
+		}
+		.reservationInputDate{
+			font-size:40px;
+			padding:30px;
+			margin:0;
+		}
+		.reservationInput{
+			width:100px;
+			height:100px;
+			font-size:50px;
+		}
+		.reservationColon{
+			font-size:50px;
+			
+		}
+		.reservationSelect{
+			width:100px;
+			height:100px;
+			font-size:40px;
+		}
+		.reservationDate{
+			margin-bottom:30px;
+			font-size:40px;
+			
+		}
+		.reservationNameRestaurant{
+			font-size:40px;
+		}
+		.reservationContainer{
+			width:500px;
+		}
+		.reservationContainer2{
+			width:300px;
+		}
+		h2{
+			font-size:50px;
+			padding-top:30px;
+			padding-bottom:30px;
+			padding-left:30px;
+		}
+		.reservationTableText2{
+			font-size:50px;
+		}	
+		.categoryName{
+			font-size:40px;
+			height:60px;
+		}
+		.aboutMenuText{
+			font-size:35px;
+		}
+		.aboutMenuTextFood{
+			font-size:35px;
+		}
+		.reservationSubmit{
+			width:500px;
+			height:100px;
+			font-size:35px;
+		}
+		.plusButton{
+			height:45px;
+		}
+		.minusButton {
+			height:45px;
+		}	
+	}

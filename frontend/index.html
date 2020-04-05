@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROS</title>
 	<link rel="icon" href="obr/icon.png">
     <link href="style.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="homepageCustomer">
 <div class="leftWall"></div>
@@ -64,166 +64,24 @@
 	
 		<p class="registerHubHead">Registrovať sa</p>
 		<div class="leftReg">
-			<p class="regText" onClick="registerCustomer()">Ako zákazník</p>
+			<p class="regText" onClick="registerCustomer()">
+			<a href="registercustomer.html">Ako zákazník</a></p>
 		</div>
 
 		<div class="rightReg">
-			<p class="regText" onClick="registerCompany()">Ako firma</p>
+			<p class="regText" onClick="registerCompany()">
+			<a href="registercompany.html">Ako majiteľ reštaurácie</a></p>
 		</div>	
 	</section>
 	
-	
-	<section id="registerCustomer">
-		<div id="exit" onClick="exit()">X</div>
-		<p class="loginHead">Registrácia zákazníka</p>
-		<form class="registerCustomer">
-		
-		<div class="regWrapLeft">
-			<label class="regLabel">Meno :</label><br>
-			<input class="regInput" type="text"><br>
-			
-			<label class="regLabel">Priezvisko :</label><br>
-			<input class="regInput" type="text"><br>
-			
-			<label class="regLabel">E-mailová adresa :</label><br>
-			<input class="regInput" type="text"><br>
-		</div>
-		<div class="regWrapRight">	
-			
-			<label class="regLabel">Telefónne číslo :</label><br>
-			<input class="regInput" type="text"><br>
-			
-			<label class="regLabel">Heslo :</label><br>
-			<input class="regInput" type="password"><br>
-			
-			<label class="regLabel">Potvrdenie hesla :</label><br>
-			<input class="regInput" type="password"><br>
-		</div>
-			<input class="regSubmit" type="submit" value="Registrovať sa">
-		</form>
-	</section>
-	
-	
-	<section id="registerCompany">
-		<div id="exit" onClick="exit()">X</div>
-		<p class="loginHead">Registrácia firmy</p>
-		<form class="registerCompany" >
-		<div class="regWrapLeft">
-			<label class="regLabel">Meno :</label><br>
-			<input class="regInput" type="text"><br>
-			
-			<label class="regLabel">Priezvisko :</label><br>
-			<input class="regInput" type="text"><br>
-			
-			<label class="regLabel">E-mailová adresa :</label><br>
-			<input class="regInput" type="text"><br>
-		
-		</div>
-		<div class="regWrapRight">	
-			
-			<label class="regLabel">Telefónne číslo :</label><br>
-			<input class="regInput" type="text"><br>
-			
-			<label class="regLabel">Heslo :</label><br>
-			<input class="regInput" type="password"><br>
-			
-			<label class="regLabel">Potvrdenie hesla :</label><br>
-			<input class="regInput" type="password"><br>
-		</div>
-			<div class="inv" onClick="registerCompanyNext()">
-				<input class="regSubmit" type="submit" value="Ďalej" disabled="disabled">
-			</div>
-		</form>
-	</section>
-	
-	
-	<section id="registerCompanyNext">
-		<div id="exit" onClick="exit()">X</div>
-		<p class="loginHead">Registrácia zamestnancov</p>
-		<form class="registerCompanyNext">
-		<div class="regWrapLeft">
-			<label class="regLabel">Zamestnanec č.1 :</label><br>
-			<input class="regInput" type="text" placeholder="E-mailová adresa zamestnanca"><br>
-			
-			<label class="regLabel">Čašník</label>
-			<input type="checkbox">
-			<label class="regLabel">Kuchyňa</label>
-			<input type="checkbox">
-			<label class="regLabel">Majiteľ</label>
-			<input type="checkbox">
-			
-			<br><br>
-			
-			<label class="regLabel">Zamestnanec č.2 :</label><br>
-			<input class="regInput" type="text" placeholder="E-mailová adresa zamestnanca"><br>
-			
-			<label class="regLabel">Čašník</label>
-			<input type="checkbox">
-			<label class="regLabel">Kuchyňa</label>
-			<input type="checkbox">
-			<label class="regLabel">Majiteľ</label>
-			<input type="checkbox">
-			
-		
-		</div>
-		<div class="regWrapRight">	
-			
-			<label class="regLabel">Zamestnanec č.3 :</label><br>
-			<input class="regInput" type="text" placeholder="E-mailová adresa zamestnanca"><br>
-			
-			<label class="regLabel">Čašník</label>
-			<input type="checkbox">
-			<label class="regLabel">Kuchyňa</label>
-			<input type="checkbox">
-			<label class="regLabel">Majiteľ</label>
-			<input type="checkbox">
-			
-			<br><br>
-			
-			<label class="regLabel">Zamestnanec č.4 :</label><br>
-			<input class="regInput" type="text" placeholder="E-mailová adresa zamestnanca"><br>
-			
-			<label class="regLabel">Čašník</label>
-			<input type="checkbox">
-			<label class="regLabel">Kuchyňa</label>
-			<input type="checkbox">
-			<label class="regLabel">Majiteľ</label>
-			<input type="checkbox">
-			
-		</div>
-		
-			<div class="inv" onClick="registerCompanyNext2()">
-				<input class="regSubmit" type="submit" value="Ďalej" disabled="disabled">
-			</div>
-			
-		</form>
-	</section>
-	
-	
-	
-	
-	
-	<section id="registerCompanyNext2">
-		<div id="exit" onClick="exit()">X</div>
-		<p class="loginHead">Ďakujeme za Vašu registráciu</p>
-		<form class="registerCompanyNext2">
-			<p class="regLabel">O ďalšom postupe Vás budeme informovať e-mailom</p>
-		
-		
-			<div class="inv" onClick="exit()">
-				<input class="regSubmit" type="submit" value="OK" disabled="disabled">
-			</div>
-			
-		</form>
-	</section>
 
-	<section id="reservation">
+	<section id="search">
 			<h3>Rezervácia</h3>
 	<div class="wrapWholeForm">		
 		<div class="wrapFirstForm">	
-			<div class="wrapFormReservation">
-				<label for="cities" class="reservationLabel">Vyber mesto:</label><br>
-				<select id="cities" class="reservationInput">
+			<div class="wrapFormSearch">
+				<label for="cities" class="searchLabel">Vyber mesto:</label><br>
+				<select id="cities" class="searchInput">
 				  <option value="kosice" selected>Košice</option>
 				  <option value="bratislava">Bratislava</option>
 				  <option value="presov">Prešov</option>
@@ -231,9 +89,9 @@
 				</select>
 			</div>
 			
-			<div class="wrapFormReservation">
-				<label for="sort" class="reservationLabel">Zoradiť podľa:</label><br>
-				<select id="sort" class="reservationInput">
+			<div class="wrapFormSearch">
+				<label for="sort" class="searchLabel">Zoradiť podľa:</label><br>
+				<select id="sort" class="searchInput">
 				  <option value="kosice" selected>populárnosti</option>
 				  <option value="abecedne">abecedne</option>
 				  <option value="ceny">ceny</option>
@@ -241,15 +99,15 @@
 				</select>
 			</div>
 			
-			<div class="wrapFormReservation">
-				<label class="reservationLabel">Dátum:</label><br>
-				<input type="date" class="reservationInput">
+			<div class="wrapFormSearch">
+				<label class="searchLabel">Dátum:</label><br>
+				<input type="date" class="searchInput">
 			</div>
 			
 			
-			<div class="wrapFormReservation">
-				<label for="time" class="reservationLabel">Čas:</label><br>
-				<select id="time" class="reservationInput">
+			<div class="wrapFormSearch">
+				<label for="time" class="searchLabel">Čas:</label><br>
+				<select id="time" class="searchInput">
 				  <option value="rano" selected>ráno</option>
 				  <option value="doobedu">doobedu</option>
 				  <option value="naobed">na obed</option>
@@ -258,20 +116,14 @@
 				</select>
 			</div>
 
-			<div class="wrapFormReservationCheckBox">
+			<div class="wrapFormSearchCheckBox">
 				<input type="checkbox" onchange="clickCheckBoxReservation()"><p class="optionText">Skryté možnosti</p>
 			</div>
-
-			<div class="wrapFormReservationSubmit">
-				<input type="submit" class="reservationSubmit" value="OK">
-			</div>
-			<br>
-			<br>
 		</div>	
 		<div class="wrapSecondForm" id="visibleForm">	
-			<div class="wrapFormReservation">
-				<label for="filter" class="reservationLabel">Filter:</label><br>
-				<select id="filter" class="reservationInput">
+			<div class="wrapFormSearch">
+				<label for="filter" class="searchLabel">Filter:</label><br>
+				<select id="filter" class="searchInput">
 				  <option value="sdetmi" selected>s detmi</option>
 				  <option value="skocikom">s kocikom</option>
 				  <option value="wifi">wifi</option>
@@ -279,11 +131,15 @@
 				</select>
 			</div>
 			
-			<div class="wrapFormReservation">
-				<label class="reservationLabel" class="reservationLabel">Hľadať:</label><br>
-				<input type="text" class="reservationInputSearch">
+			<div class="wrapFormSearch">
+				<label class="searchLabel" class="searchLabel">Hľadať:</label><br>
+				<input type="text" class="searchInputSearch">
 			</div>
 		</div>	
+		
+			<div class="wrapFormSearchSubmit">
+				<input type="submit" class="searchSubmit" value="OK">
+			</div>
 	</div>
 	
 	
@@ -311,7 +167,8 @@
 						<div class="price">
 						</div>
 					</div>
-				<p class="nameRestaurant">Geronimo Express</p>
+				<p class="nameRestaurant">Čert a Káča - Do s s s o na K sd as olibe
+</p>
 				
 				<div class="whiteWrap">
 					<div class="logoRestaurant"></div>
