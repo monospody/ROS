@@ -22,4 +22,6 @@ public interface RestaurantService {
 	void addRestaurant(EntityRestaurant restaurant);
 
 	List<EntityRestaurant> getRestaurantsByCity(String city);
+
+    List<String> getCities();
 }

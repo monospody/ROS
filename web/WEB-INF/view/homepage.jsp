@@ -235,10 +235,11 @@
 				<form:form action="restaurant/searchByCity" modelAttribute="restaurants" method="get">
 					<label for="cities" class="reservationLabel">Vyber mesto:</label><br>
 					<select id="cities" class="reservationInput" name="city">
-						<option value="kosice" selected>Košice</option>
-						<option value="bratislava">Bratislava</option>
-						<option value="presov">Prešov</option>
-						<option value="poprad">Poprad</option>
+
+						<c:forEach var="city" items="${cities}">
+							<option value="${city.toString()}" selected>${city.toString()}</option>
+						</c:forEach>
+
 					</select>
 					</div>
 
@@ -308,15 +309,15 @@
 				<div class="peopleAndPriceSpace"></div>
 
 				<div class="groupPeople">
-					<div class="person"></div>
-					<div class="person"></div>
-					<div class="person"></div>
+					<c:forEach begin="0" end="${restaurant.visitors}" varStatus="loop">
+						<div class="person"></div>
+					</c:forEach>
 				</div>
 
 				<div class="groupPrice">
-					<div class="price"></div>
-					<div class="price"></div>
-					<div class="price"></div>
+					<c:forEach begin="0" end="${restaurant.priceRange}" varStatus="loop">
+						<div class="price"></div>
+					</c:forEach>
 				</div>
 				<p class="nameRestaurant"><c:out value="${restaurant.restaurantName}"/></p>
 
@@ -348,7 +349,7 @@
 						</div>
 					</c:if>
 
-					<p class="percent">97.8%</p>
+					<p class="percent">${restaurant.percentageRating}%</p>
 
 					 <div class="groupCircles">
 
@@ -367,7 +368,7 @@
 
 				<div class="cyanWrap">
 					<p class="chooseText">VYBRAŤ</p>
-					<p class="fromPrice">od <c:out value="${restaurant.minPrice}"/>€</p>
+					<p class="fromPrice">od <c:out value="${restaurant.minPriceOrder}"/>€</p>
 				</div>
 
 			</section>

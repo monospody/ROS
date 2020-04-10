@@ -37,6 +37,12 @@ public class RestaurantServiceImpl implements RestaurantService {
 
 	@Override
 	@Transactional
+	public List<String> getCities() {
+		return restaurantDAO.getCities();
+	}
+
+	@Override
+	@Transactional
 	public void saveRestaurant(EntityRestaurant restaurant) {
 		restaurantDAO.saveRestaurant(restaurant);
 	}

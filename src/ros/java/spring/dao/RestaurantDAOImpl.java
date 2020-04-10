@@ -6,7 +6,6 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ros.java.spring.entity.EntityRestaurant;
-import ros.java.spring.entity.EntityReviews;
 
 
 import java.util.List;
@@ -25,17 +24,33 @@ public class RestaurantDAOImpl implements RestaurantDAO {
 		Session session = sessionFactory.getCurrentSession();
 		Query<EntityRestaurant> query = session.createQuery("from EntityRestaurant", EntityRestaurant.class);
 		List<EntityRestaurant> restaurants = query.getResultList();
+
+		setTransientVariables(restaurants);
+
+		return restaurants;
+	}
+
+	@Override
+	public void setTransientVariables(List<EntityRestaurant> restaurants){
+		Session session = sessionFactory.getCurrentSession();
 		for (EntityRestaurant restaurant:restaurants) {
-			Query<Integer> query1 = session.createQuery("SELECT reviewsRatingStars FROM EntityReviews WHERE reviewsRestaurantId = :restaurantID", Integer.class).setParameter("restaurantID", restaurant.getRestaurantId());
+			Query<Integer> query1 = session.createQuery("SELECT reviewsRatingStars FROM EntityReview WHERE reviewsRestaurantId = :restaurantID", Integer.class).setParameter("restaurantID", restaurant.getRestaurantId());
 			List<Integer> res = query1.getResultList();
 			double avg = 0;
 			for (Integer re : res) {
 				avg += re;
 			}
 			avg = avg/res.size();
+			restaurant.setPercentageRating((int) ((avg/3)*100));
 			restaurant.setAverageRating(avg);
 		}
-		return restaurants;
+	}
+
+	@Override
+	public List<String> getCities() {
+		Session session = sessionFactory.getCurrentSession();
+		Query<String> query = session.createQuery("SELECT restaurantCity FROM EntityRestaurant", String.class);
+		return query.getResultList();
 	}
 
 	@Override

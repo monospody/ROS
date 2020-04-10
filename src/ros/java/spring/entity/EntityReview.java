@@ -3,8 +3,8 @@ package ros.java.spring.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "reviews", schema = "restaurantOrderingSystem")
-public class EntityReviews {
+@Table(name = "review", schema = "restaurantOrderingSystem")
+public class EntityReview {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -25,6 +25,9 @@ public class ControllerHomepage {
         List<EntityRestaurant> restaurants = restaurantService.getRestaurants();
         model.addAttribute("restaurants", restaurants);
 
+        List<String> cities = restaurantService.getCities();
+        model.addAttribute("cities", cities);
+
         return "homepage";
     }
 }

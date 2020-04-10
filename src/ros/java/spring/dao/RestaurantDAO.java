@@ -21,4 +21,8 @@ public interface RestaurantDAO {
 	EntityRestaurant getRestaurant(int id);
 
 	void deleteRestaurant(int id);
+
+	void setTransientVariables(List<EntityRestaurant> restaurants);
+
+    List<String> getCities();
 }
