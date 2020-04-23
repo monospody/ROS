@@ -76,6 +76,14 @@ public class EntityRestaurant {
 	@JoinColumn(name = "restaurantId")
 	private List<EntityReview> review;
 
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "restaurantId")
+	private List<EntityTable> table;
+
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "restaurantId")
+	private List<EntityProduct> products;
+
 	@Transient
 	private double averageRating;
 
@@ -195,6 +203,18 @@ public class EntityRestaurant {
 	}
 	public void setPercentageRating(int percentageRating) {
 		this.percentageRating = percentageRating;
+	}
+	public List<EntityTable> getTable() {
+		return table;
+	}
+	public void setTable(List<EntityTable> tables) {
+		this.table = tables;
+	}
+	public List<EntityProduct> getProducts() {
+		return products;
+	}
+	public void setProducts(List<EntityProduct> products) {
+		this.products = products;
 	}
 
 	@Override

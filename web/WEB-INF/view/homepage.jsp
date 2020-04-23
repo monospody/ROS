@@ -11,7 +11,7 @@
     <title>ROS</title>
 <%--
 	<link rel="icon" href="obr/icon.png">
-    <link href="style.css" rel="stylesheet">
+    <link href="styleUDEMY.css" rel="stylesheet">
 --%>
 	<link rel="icon" href="${pageContext.request.contextPath}/resources/img/icon.png">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/merge-style.css?v=1"/>
@@ -366,10 +366,13 @@
 
 				</div>
 
-				<div class="cyanWrap">
-					<p class="chooseText">VYBRAŤ</p>
-					<p class="fromPrice">od <c:out value="${restaurant.minPriceOrder}"/>€</p>
-				</div>
+				<form:form action="reservation" method="post">
+					<div class="cyanWrap">
+						<input type="hidden" value="${restaurant.restaurantId}" name="restaurantId">
+						<button class="chooseText">VYBRAŤ</button>
+						<p class="fromPrice">od <c:out value="${restaurant.minPriceOrder}"/>€</p>
+					</div>
+				</form:form>
 
 			</section>
 
