@@ -3,8 +3,11 @@ package ros.java.spring.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ros.java.spring.entity.EntityCategory;
+import ros.java.spring.entity.EntityProduct;
 import ros.java.spring.entity.EntityRestaurant;
 import ros.java.spring.dao.RestaurantDAO;
+import ros.java.spring.entity.EntityTable;
 
 import java.beans.Transient;
 import java.util.List;
@@ -52,5 +55,30 @@ public class RestaurantServiceImpl implements RestaurantService {
 	@Transactional
 	public void addRestaurant(EntityRestaurant restaurant) {
 		restaurantDAO.addRestaurant(restaurant);
+	}
+
+	@Override
+	public List<EntityRestaurant> getRestaurantsByCity(String city) {
+		return null;
+	}
+
+	@Override
+	public List<String> getCities() {
+		return null;
+	}
+
+	@Override
+	public List<EntityTable> getRestaurantTables(int id) {
+		return null;
+	}
+
+	@Override
+	public List<EntityProduct> getProductsByRestaurantAndAvailability(int id) {
+		return null;
+	}
+
+	@Override
+	public List<EntityCategory> getCategoriesByProductsByRestaurantAndAvailability(List<EntityProduct> products, int id) {
+		return null;
 	}
 }

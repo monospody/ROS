@@ -5,7 +5,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import ros.java.spring.entity.EntityCategory;
+import ros.java.spring.entity.EntityProduct;
 import ros.java.spring.entity.EntityRestaurant;
+import ros.java.spring.entity.EntityTable;
 
 
 import java.util.List;
@@ -25,7 +28,7 @@ public class RestaurantDAOImpl implements RestaurantDAO {
 		Query<EntityRestaurant> query = session.createQuery("from EntityRestaurant", EntityRestaurant.class);
 		List<EntityRestaurant> restaurants = query.getResultList();
 		for (EntityRestaurant restaurant:restaurants) {
-			Query<Integer> query1 = session.createQuery("SELECT reviewsRatingStars FROM EntityReviews WHERE reviewsRestaurantId = :restaurantID", Integer.class).setParameter("restaurantID", restaurant.getRestaurantId());
+			Query<Integer> query1 = session.createQuery("SELECT reviewsRatingStars FROM EntityReview WHERE reviewsRestaurantId = :restaurantID", Integer.class).setParameter("restaurantID", restaurant.getRestaurantId());
 			List<Integer> res = query1.getResultList();
 			double avg = 0;
 			for (Integer re : res) {
@@ -59,8 +62,6 @@ public class RestaurantDAOImpl implements RestaurantDAO {
 			System.out.println(theQuery2.list());
 			return theQuery2.getResultList();
 		}
-
-
 	}
 
 
@@ -91,5 +92,55 @@ public class RestaurantDAOImpl implements RestaurantDAO {
 		query.executeUpdate();
 
 
+	}
+
+	@Override
+	public List<String> getCities() {
+		Session session = sessionFactory.getCurrentSession();
+		Query<String> query = session.createQuery("SELECT restaurantCity FROM EntityRestaurant", String.class);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<EntityTable> getRestaurantTables(int id) {
+		Session session = sessionFactory.getCurrentSession();
+
+/*		Query<EntityTable> query = session.createQuery("FROM EntityTable ", EntityTable.class);
+		List<EntityTable> list = query.getResultList();*/
+
+		return null;
+	}
+
+	@Override
+	public List<EntityProduct> getProductsByRestaurantAndAvailability(int id) {
+		Session session = sessionFactory.getCurrentSession();
+
+		Query<EntityProduct> query = session.createQuery("FROM EntityProduct WHERE productRestaurantId = :restaurantId AND productAvailability = 1", EntityProduct.class);
+		query.setParameter("restaurantId", id);
+
+		List<EntityProduct> products = query.getResultList();
+
+		System.out.println("IM HERE getting products by id: "+id+" and availability");
+		for (EntityProduct product: products) {
+			System.out.println(product.getProductName() +"  "+ product.getProductCategoryId());
+		}
+
+		return products;
+	}
+
+	@Override
+	public List<EntityCategory> getCategoriesByProductsByRestaurantAndAvailability(List<EntityProduct> products, int id) {
+		Session session = sessionFactory.getCurrentSession();
+
+		Query<EntityCategory> query;
+
+		query = session.createQuery("FROM EntityCategory WHERE categoryId IN (SELECT productCategoryId FROM EntityProduct WHERE productRestaurantId = :restaurantId AND productAvailability = 1)", EntityCategory.class);
+		query.setParameter("restaurantId", id);
+
+		List<EntityCategory> categories = query.getResultList();
+
+		System.out.println("IM HERE getting categories that contain available products from restaurant: "+id);
+
+		return categories;
 	}
 }

@@ -551,82 +551,33 @@
 			</div>
 			<p class="reservationTableText2">Jedálny lístok reštaurácie :</p>
 			<div id="wrapMenuCategory">
-				<p class="categoryName">Polievky</p>
-				<div class="aboutMenu">
-					<p class="aboutMenuText" style="flex-grow:5;">Meno</p>
-					<p class="aboutMenuText aler" style="flex-grow:1;">Alergény</p>
-					<p class="aboutMenuText" style="flex-grow:3;">Suroviny</p>
-					<p class="aboutMenuText" style="flex-grow:2;">Cena</p>
-					<p class="aboutMenuText" style="flex-grow:1;">Počet</p>
-				</div>
-				<div class="aboutMenu2">
-					<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
-					<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
-					<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
-					<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
-					<p class="aboutMenuTextFood plusButton">+</p>
-
-					<p class="aboutMenuTextFood counter">
-						1
-					</p>
-					<p class="aboutMenuTextFood minusButton">-</p>
-					</p>
-				</div>
-				<div class="aboutMenu2">
-					<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
-					<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
-					<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
-					<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
-					<p class="aboutMenuTextFood plusButton">+</p>
-
-					<p class="aboutMenuTextFood counter">
-						1
-					</p>
-					<p class="aboutMenuTextFood minusButton">-</p>
-					</p>
-				</div>
-				<div class="aboutMenu2">
-					<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
-					<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
-					<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
-					<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
-					<p class="aboutMenuTextFood plusButton">+</p>
-
-					<p class="aboutMenuTextFood counter">
-						1
-					</p>
-					<p class="aboutMenuTextFood minusButton">-</p>
-					</p>
-				</div>
-				<div class="aboutMenu2">
-					<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
-					<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
-					<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
-					<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
-					<p class="aboutMenuTextFood plusButton">+</p>
-
-					<p class="aboutMenuTextFood counter">
-						1
-					</p>
-					<p class="aboutMenuTextFood minusButton">-</p>
-					</p>
-				</div>
-				<div class="aboutMenu2">
-					<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
-					<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
-					<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
-					<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
-					<p class="aboutMenuTextFood plusButton">+</p>
-
-					<p class="aboutMenuTextFood counter">
-						1
-					</p>
-					<p class="aboutMenuTextFood minusButton">-</p>
-					</p>
-				</div>
-
-
+				<c:forEach var="category" items="${categories}">
+					<p class="categoryName">${category.categoryName}</p>
+					<div class="aboutMenu">
+						<p class="aboutMenuText" style="flex-grow:5;">Meno</p>
+						<p class="aboutMenuText aler" style="flex-grow:1;">Alergény</p>
+						<p class="aboutMenuText" style="flex-grow:3;">Suroviny</p>
+						<p class="aboutMenuText" style="flex-grow:2;">Cena</p>
+						<p class="aboutMenuText" style="flex-grow:1;">Počet</p>
+					</div>
+					<c:forEach var="product" items="${products}">
+						<c:if test="${product.productCategoryId == category.categoryId}">
+							<div class="aboutMenu2">
+								<p class="aboutMenuTextFood" style="flex-grow:2;">${product.productName}</p>
+								<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+								<p class="aboutMenuTextFood materials">${product.productInfoRecipe}</p>
+								<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+								<p class="aboutMenuTextFood plusButton">+</p>
+								<p class="aboutMenuTextFood counter">
+									0
+								</p>
+								<p class="aboutMenuTextFood minusButton">-</p>
+							</div>
+						</c:if>
+					</c:forEach>
+				</c:forEach>
 			</div>
+
 			<div id="wrapMenuCategory">
 				<p class="categoryName">Polievky</p>
 				<div class="aboutMenu">
