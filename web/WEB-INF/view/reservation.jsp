@@ -1,11 +1,15 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="sk">
 
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <title>ROS</title>
-	<link rel="icon" href="obr/icon.png">
-    <link href="style.css" rel="stylesheet">
+	<link rel="icon" href="${pageContext.request.contextPath}/resources/img/icon.png">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css?v=1"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="reservation">
@@ -16,10 +20,11 @@
 	<div class="wrapReservation">
 		<div class="logoBottom"></div>
 		<h2>Rezervácia</h2>
+
 		<form class="reservationForm">
 			<div class="wrapReservationContainers">
 					<div class="reservationNameRestaurant">Geronimo Express</div>
-					
+			
 				<div class="reservationContainer">	
 					<label class="reservationDate">
 					Dátum:
@@ -69,7 +74,7 @@
 			<div class="wrapGridTableInfo">
 			<div class="reservationGrid">
 				<div class="wrapLines">
-					<div class="line">	
+					<div class="line">
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -111,8 +116,7 @@
 						  <span class="checkmark"></span>
 						</label>
 					</div>
-					<div class="line">	
-
+					<div class="line">
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -154,9 +158,7 @@
 						  <span class="checkmark"></span>
 						</label>
 					</div>
-					
-						<div class="line">	
-
+					<div class="line">
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -198,8 +200,7 @@
 						  <span class="checkmark"></span>
 						</label>
 					</div>
-					<div class="line">	
-
+					<div class="line">
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -241,9 +242,7 @@
 						  <span class="checkmark"></span>
 						</label>
 					</div>
-					
-						<div class="line">	
-
+					<div class="line">
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -285,8 +284,7 @@
 						  <span class="checkmark"></span>
 						</label>
 					</div>
-					<div class="line">	
-
+					<div class="line">
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -328,8 +326,7 @@
 						  <span class="checkmark"></span>
 						</label>
 					</div>
-						<div class="line">	
-
+					<div class="line">
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -371,8 +368,7 @@
 						  <span class="checkmark"></span>
 						</label>
 					</div>
-					<div class="line">	
-
+					<div class="line">
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -414,8 +410,7 @@
 						  <span class="checkmark"></span>
 						</label>
 					</div>
-					<div class="line">	
-
+					<div class="line">
 						<label class="container">
 						  <input type="checkbox">
 						  <span class="checkmark"></span>
@@ -501,9 +496,6 @@
 						</label>
 					</div>
 				</div>
-	
-			
-			
 			</div>
 			
 			<div class="reservationTableInfo">
@@ -535,99 +527,203 @@
 				
 			</div>
 			
-			</section>
-			
-			
 			</div>
 				<p class="reservationTableText2">Jedálny lístok reštaurácie :</p>
+
 				<div id="wrapMenuCategory">
+					<c:forEach var="category" items="${categories}">
+						<p class="categoryName">${category.categoryName}</p>
+						<div class="aboutMenu">
+							<p class="aboutMenuText" style="flex-grow:5;">Meno</p>
+							<p class="aboutMenuText aler" style="flex-grow:1;">Alergény</p>
+							<p class="aboutMenuText" style="flex-grow:3;">Suroviny</p>
+							<p class="aboutMenuText" style="flex-grow:2;">Cena</p>
+							<p class="aboutMenuText" style="flex-grow:1;">Počet</p>
+						</div>
+						<c:forEach var="product" items="${products}">
+							<c:if test="${product.productCategoryId == category.categoryId}">
+								<div class="aboutMenu2">
+									<p class="aboutMenuTextFood" style="flex-grow:2;">${product.productName}</p>
+									<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+									<p class="aboutMenuTextFood materials">${product.productInfoRecipe}</p>
+									<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+									<p class="aboutMenuTextFood plusButton">+</p>
+									<p class="aboutMenuTextFood counter">
+										0
+									</p>
+									<p class="aboutMenuTextFood minusButton">-</p>
+								</div>
+							</c:if>
+						</c:forEach>
+					</c:forEach>
+				</div>
+
+				<%--<div id="wrapMenuCategory">
 						<p class="categoryName">Polievky</p>
-						
-						<div class="foodWrap">
-							<p class="foodName">Kuracie prsia so zemiakmi</p>
-							<p class="ingrName">(100g kuracie prsia, 150g zemiaky)</p>
-							<p class="alerName">1,2,8,6</p>
-							<p class="foodPrice">9999,50€</p>		
-							<div class="countWrap">
-								<div class="minusBtn">-</div>
-								<input type="text" class="countBtn" value="0">
-								<div class="plusBtn">+</div>
-							</div>
+						<div class="aboutMenu">
+							<p class="aboutMenuText" style="flex-grow:5;">Meno</p>
+							<p class="aboutMenuText aler" style="flex-grow:1;">Alergény</p>
+							<p class="aboutMenuText" style="flex-grow:3;">Suroviny</p>
+							<p class="aboutMenuText" style="flex-grow:2;">Cena</p>
+							<p class="aboutMenuText" style="flex-grow:1;">Počet</p>
 						</div>
-						<div class="foodWrap">
-							<p class="foodName">Kuraciacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiagfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiae fgfgfgfgfgfgfgprsia so zemiakmi</p>
-							<p class="ingrName">(10acie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsia0g kuracie prsia, 150g zemiaky)</p>
-							<p class="alerName">1,2acie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsiaacie fgfgfgfgfgfgfgprsia,8,6</p>
-							<p class="foodPrice">3,50€</p>		
-							<div class="countWrap">
-								<div class="minusBtn">-</div>
-								<input type="text" class="countBtn" value="0">
-								<div class="plusBtn">+</div>
-							</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
 						</div>
-						<div class="foodWrap">
-							<p class="foodName">Kuracie prsia so zemiakmi</p>
-							<p class="ingrName">(100g kuracie prsia, 150g zemiaky)</p>
-							<p class="alerName">1,2,8,6</p>
-							<p class="foodPrice">3,50€</p>		
-							<div class="countWrap">
-								<div class="minusBtn">-</div>
-								<input type="text" class="countBtn" value="0">
-								<div class="plusBtn">+</div>
-							</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
 						</div>
-						<div class="foodWrap">
-							<p class="foodName">Kuracie prsia so zemiakmi</p>
-							<p class="ingrName">(100g kuracie prsia, 150g zemiaky)</p>
-							<p class="alerName">1,2,8,6</p>
-							<p class="foodPrice">3,50€</p>		
-							<div class="countWrap">
-								<div class="minusBtn">-</div>
-								<input type="text" class="countBtn" value="0">
-								<div class="plusBtn">+</div>
-							</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
 						</div>
-						<div class="foodWrap">
-							<p class="foodName">Kuracie prsia so zemiakmi</p>
-							<p class="ingrName">(100g kuracie prsia, 150g zemiaky)</p>
-							<p class="alerName">1,2,8,6</p>
-							<p class="foodPrice">3,50€</p>		
-							<div class="countWrap">
-								<div class="minusBtn">-</div>
-								<input type="text" class="countBtn" value="0">
-								<div class="plusBtn">+</div>
-							</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
 						</div>
-						<div class="foodWrap">
-							<p class="foodName">Kuracie prsia so zemiakmi</p>
-							<p class="ingrName">(100g kuracie prsia, 150g zemiaky)</p>
-							<p class="alerName">1,2,8,6</p>
-							<p class="foodPrice">3,50€</p>		
-							<div class="countWrap">
-								<div class="minusBtn">-</div>
-								<input type="text" class="countBtn" value="0">
-								<div class="plusBtn">+</div>
-							</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
 						</div>
-						
-						
-						
-						
 						
 						
 				</div>	
+				<div id="wrapMenuCategory">
+						<p class="categoryName">Polievky</p>
+						<div class="aboutMenu">
+							<p class="aboutMenuText" style="flex-grow:5;">Meno</p>
+							<p class="aboutMenuText aler" style="flex-grow:1;">Alergény</p>
+							<p class="aboutMenuText" style="flex-grow:3;">Suroviny</p>
+							<p class="aboutMenuText" style="flex-grow:2;">Cena</p>
+							<p class="aboutMenuText" style="flex-grow:1;">Počet</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
+						</div>
+						<div class="aboutMenu2">
+							<p class="aboutMenuTextFood" style="flex-grow:2;">Kuracie prsia na smotane</p>
+							<p class="aboutMenuTextFood aler" style="flex-grow:1; background:#e5e5e5;">1,7,2</p>
+							<p class="aboutMenuTextFood materials">100g kuracie prsia, 50g smotana</p>
+							<p class="aboutMenuTextFood" style="flex-grow:2; background:#cfedf4; font-family:NunitoBold;">3,50€</p>
+							<p class="aboutMenuTextFood plusButton">+</p>
+
+							<p class="aboutMenuTextFood counter">
+							1
+							</p>
+							<p class="aboutMenuTextFood minusButton">-</p>
+							</p>
+						</div>
+						
+				</div>	--%>
 				
 				<br>
 				<div class="wrapSubmitReservation">
 					<input type="submit" class="reservationSubmit" value="Rekapitulácia objednávky">
 				</div>
 			
+			</section>
 			
 			
 			
 			</form>
 		</div>
 
-    <script src="js/app.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/app.js"></script>
 </body>
 </html>

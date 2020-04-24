@@ -60,8 +60,8 @@ public class EntityRestaurant {
 	@Column(name = "aboutRestaurant")
 	private String restaurantAboutRestaurant;
 
-	@Column(name = "minPrice")
-	private int minPrice;
+	@Column(name = "minPriceOrder")
+	private int minPriceOrder;
 
 	@Column(name = "visitors")
 	private int visitors;
@@ -74,10 +74,21 @@ public class EntityRestaurant {
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "restaurantId")
-	private List<EntityReviews> reviews;
+	private List<EntityReview> review;
+
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "restaurantId")
+	private List<EntityTable> table;
+
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "restaurantId")
+	private List<EntityProduct> products;
 
 	@Transient
 	private double averageRating;
+
+	@Transient
+	private int percentageRating;
 
 	public EntityRestaurant() {
 	}
@@ -151,11 +162,11 @@ public class EntityRestaurant {
 	public void setRestaurantAboutRestaurant(String aboutRestaurant) {
 		this.restaurantAboutRestaurant = aboutRestaurant;
 	}
-	public int getMinPrice() {
-		return minPrice;
+	public int getMinPriceOrder() {
+		return minPriceOrder;
 	}
-	public void setMinPrice(int minPrice) {
-		this.minPrice = minPrice;
+	public void setMinPriceOrder(int minPrice) {
+		this.minPriceOrder = minPrice;
 	}
 	public int getVisitors() {
 		return visitors;
@@ -175,17 +186,35 @@ public class EntityRestaurant {
 	public void setLogo(String logo) {
 		this.logo = logo;
 	}
-	public List<EntityReviews> getReviews() {
-		return reviews;
+	public List<EntityReview> getReview() {
+		return review;
 	}
-	public void setReviews(List<EntityReviews> reviews) {
-		this.reviews = reviews;
+	public void setReview(List<EntityReview> reviews) {
+		this.review = reviews;
 	}
 	public double getAverageRating() {
 		return averageRating;
 	}
 	public void setAverageRating(double averageRating) {
 		this.averageRating = averageRating;
+	}
+	public int getPercentageRating() {
+		return percentageRating;
+	}
+	public void setPercentageRating(int percentageRating) {
+		this.percentageRating = percentageRating;
+	}
+	public List<EntityTable> getTable() {
+		return table;
+	}
+	public void setTable(List<EntityTable> tables) {
+		this.table = tables;
+	}
+	public List<EntityProduct> getProducts() {
+		return products;
+	}
+	public void setProducts(List<EntityProduct> products) {
+		this.products = products;
 	}
 
 	@Override
@@ -202,14 +231,14 @@ public class EntityRestaurant {
 				Objects.equals(restaurantAddress, that.restaurantAddress) &&
 				Objects.equals(restaurantPhoneNumber, that.restaurantPhoneNumber) &&
 				Objects.equals(restaurantAboutRestaurant, that.restaurantAboutRestaurant) &&
-				Objects.equals(minPrice, that.minPrice) &&
+				Objects.equals(minPriceOrder, that.minPriceOrder) &&
 				Objects.equals(visitors, that.visitors) &&
 				Objects.equals(priceRange, that.priceRange) &&
 				Objects.equals(logo, that.logo);
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(restaurantId, restaurantName, restaurantTables, restaurantTags, restaurantOpeningHours, restaurantCapacity, restaurantAddress, restaurantPhoneNumber, restaurantAboutRestaurant, minPrice, visitors, priceRange, logo);
+		return Objects.hash(restaurantId, restaurantName, restaurantTables, restaurantTags, restaurantOpeningHours, restaurantCapacity, restaurantAddress, restaurantPhoneNumber, restaurantAboutRestaurant, minPriceOrder, visitors, priceRange, logo);
 	}
 	@Override
 	public String toString() {
@@ -225,7 +254,7 @@ public class EntityRestaurant {
 				", restaurantCity='" + restaurantCity + '\'' +
 				", restaurantPhoneNumber='" + restaurantPhoneNumber + '\'' +
 				", restaurantAboutRestaurant='" + restaurantAboutRestaurant + '\'' +
-				", minPrice=" + minPrice +
+				", minPrice=" + minPriceOrder +
 				", visitors=" + visitors +
 				", priceRange=" + priceRange +
 				", logo='" + logo + '\'' +

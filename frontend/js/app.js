@@ -14,14 +14,10 @@ function registerCustomer(){
 	document.getElementById("registerCustomer").style.display = "block";
 }
 function addItem(){
-	let a = document.getElementById("aboutMenuInputs").cloneNode(true);
-	document.getElementById("wrapMenuInputs").appendChild(a);
-
+	document.getElementById("items").innerHTML +='<div class="foodWrapReg" ><input type="text" class="foodNameReg" value="Kuracie prsia so zemiakmi"><br><input type="text" class="ingrNameReg" value="(100g kuracie prsia, 150g zemiaky)"><br><input type="text" class="alerNameReg" value="1,2,8,6"><input type="text" class="foodPriceReg" value="9999,50€"></div>';
 }
 function addCategory(){
-	let a = document.getElementById("wrapMenuCategory").cloneNode(true);
-	document.getElementById("wrapMenuCat").appendChild(a);
-	
+	document.getElementById("items").innerHTML += '<input type="text" class="categoryNameReg" value="Polievky"><div class="foodWrapReg"><input type="text" class="foodNameReg" value="Kuracie prsia so zemiakmi"><br><input type="text" class="ingrNameReg" value="(100g kuracie prsia, 150g zemiaky)"><br><input type="text" class="alerNameReg" value="1,2,8,6"><input type="text" class="foodPriceReg" value="9999,50€"></div>'
 }
 function exit(){
 	document.getElementById("login").style.display = "none";

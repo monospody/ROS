@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>ROS</title>
 	<link rel="icon" href="obr/icon.png">
-    <link href="style.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="systemCompany">
@@ -97,31 +97,50 @@
 	</nav>
 </div>
 
-<section class="afterLogin">
-		<h4 class="categoryText">Vitajte v systéme ROS</h4>
-		<div class="twoThirdContainer">
-			<h5 class="headTextContainer">Upozornenia</h5>
+<section class="wrap">		
+		<div class="categoryHeader">
+			<h4 class="categoryText">Jedálny lístok</h4>
+			<div class="categoryNumbers">
+				<p class="categoryNumber">1</p>
+				<p class="categoryNumber">2</p>
+				<p class="categoryNumber">3</p>
+				<p class="categoryNumber">4</p>
+				<p class="categoryNumber">5</p>
+				<p class="categoryNumber numberColor">6</p>
+			</div>
+		</div>
+		
+		<div class="aboutRestaurantOne6">
+		
+			<div class="aboutRestaurantWrap">
+						<input type="text" class="categoryNameReg" value="Polievky">
+						
+						<div class="foodWrapReg">
+							<input type="text" class="foodNameReg" value="Kuracie prsia so zemiakmi">
+							<input type="text" class="ingrNameReg" value="(100g kuracie prsia, 150g zemiaky)">
+							<input type="text" class="alerNameReg" value="1,2,8,6">
+							<input type="text" class="foodPriceReg" value="9999,50€">							
+						</div>
+						<div id="items"></div>
+						
+						
+						<div class="wrapButtons">
+							<div class="newItem" onClick="addItem()">+</div>
+							<div class="newCategory" onClick="addCategory()">+</div>
+						</div>
+				
+				
+			</div>
 			
 		</div>
-		
-		<div class="thirdContainer">
-			<h5 class="headTextContainer">Prebiehajúce</h5>
-			
-		</div>
-		
-		
-		<br>
-		<div class="wrapContainers">
-			<div class="thirdContainer">ijkl</div>
-			<div class="thirdContainer">mnop</div>
-			<div class="thirdContainer">rstu</div>
-		</div>
 
-
+		<div class="categoryHeader">
+			<p class="next2">Ďalej</p>
+		</div>
 </section>
 
 
 
-    <script src="js/app.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 </html>
