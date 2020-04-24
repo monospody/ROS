@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/styleUDEMY.css" />
         <title>Customer List</title>
     </head>
     <body>

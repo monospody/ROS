@@ -14,7 +14,7 @@ public interface RestaurantService {
 
 	public List<EntityRestaurant> getRestaurants();
 
-	public List<EntityRestaurant> getRestaurantsSearch(String word, String city);
+	public List<EntityRestaurant> getRestaurantsByKeyword(String word);
 
 	void saveRestaurant(EntityRestaurant restaurant);
 
@@ -26,12 +26,11 @@ public interface RestaurantService {
 
 	List<EntityRestaurant> getRestaurantsByCity(String city);
 
-	List<String> getCities();
+    List<String> getCities();
 
-	List<EntityTable> getRestaurantTables(int id);
+    List<EntityTable> getRestaurantTables(int id);
 
-	List<EntityProduct> getProductsByRestaurantAndAvailability(int id);
+    List<EntityProduct> getProductsByRestaurantAndAvailability(int id);
 
 	List<EntityCategory> getCategoriesByProductsByRestaurantAndAvailability(List<EntityProduct> products, int id);
-
 }

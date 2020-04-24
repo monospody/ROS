@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Title</title>
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/styleUDEMY.css">
 
 </head>
 <body>

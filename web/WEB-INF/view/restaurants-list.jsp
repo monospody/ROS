@@ -12,7 +12,7 @@
 <html>
 <head>
     <title>Restaurants list</title>
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/styleUDEMY.css">
 
 </head>
 <body>
@@ -26,19 +26,16 @@
 <%--			<input type="submit" value="Submit" class="add-button">--%>
 <%--		</form:form>--%>
 
-		<form:form action="search" modelAttribute="restaurants" method="get">
-
-			<label for="cities" class="reservationLabel">Vyber mesto:</label><br>
-			<select id="cities" class="reservationInput" name="city">
-				<option value="kosice" selected>Košice</option>
-				<option value="bratislava">Bratislava</option>
-				<option value="presov">Prešov</option>
-				<option value="poprad">Poprad</option>
-			</select>
-			Search :
-			<input type="text" name="word">
-			<input type="submit" value="Submit" class="add-button">
-		</form:form>
+<%--		<form:form action="searchByCity" modelAttribute="restaurants" method="get">--%>
+<%--			<label for="cities" class="reservationLabel">Vyber mesto:</label><br>--%>
+<%--			<select id="cities" class="reservationInput" name="city">--%>
+<%--				<option value="kosice" selected>Košice</option>--%>
+<%--				<option value="bratislava">Bratislava</option>--%>
+<%--				<option value="presov">Prešov</option>--%>
+<%--				<option value="poprad">Poprad</option>--%>
+<%--			</select>--%>
+<%--			<input type="submit" value="Submit" class="add-button">--%>
+<%--		</form:form>--%>
 		</div>
 
 

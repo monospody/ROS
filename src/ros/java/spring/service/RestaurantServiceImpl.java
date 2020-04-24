@@ -9,7 +9,6 @@ import ros.java.spring.entity.EntityRestaurant;
 import ros.java.spring.dao.RestaurantDAO;
 import ros.java.spring.entity.EntityTable;
 
-import java.beans.Transient;
 import java.util.List;
 
 /**
@@ -29,8 +28,38 @@ public class RestaurantServiceImpl implements RestaurantService {
 
 	@Override
 	@Transactional
-	public List<EntityRestaurant> getRestaurantsSearch(String word, String city) {
-		return restaurantDAO.getRestaurantsSearch(word, city);
+	public List<EntityRestaurant> getRestaurantsByKeyword(String word) {
+		return restaurantDAO.getRestaurantsByKeyword(word);
+	}
+
+	@Override
+	@Transactional
+	public List<EntityRestaurant> getRestaurantsByCity(String city) {
+		return restaurantDAO.getRestaurantsByCity(city);
+	}
+
+	@Override
+	@Transactional
+	public List<String> getCities() {
+		return restaurantDAO.getCities();
+	}
+
+	@Override
+	@Transactional
+	public List<EntityTable> getRestaurantTables(int id) {
+		return restaurantDAO.getRestaurantTables(id);
+	}
+
+	@Override
+	@Transactional
+	public List<EntityProduct> getProductsByRestaurantAndAvailability(int id) {
+		return restaurantDAO.getProductsByRestaurantAndAvailability(id);
+	}
+
+	@Override
+	@Transactional
+	public List<EntityCategory> getCategoriesByProductsByRestaurantAndAvailability(List<EntityProduct> products, int id) {
+		return restaurantDAO.getCategoriesByProductsByRestaurantAndAvailability(products, id);
 	}
 
 	@Override
@@ -55,30 +84,5 @@ public class RestaurantServiceImpl implements RestaurantService {
 	@Transactional
 	public void addRestaurant(EntityRestaurant restaurant) {
 		restaurantDAO.addRestaurant(restaurant);
-	}
-
-	@Override
-	public List<EntityRestaurant> getRestaurantsByCity(String city) {
-		return null;
-	}
-
-	@Override
-	public List<String> getCities() {
-		return null;
-	}
-
-	@Override
-	public List<EntityTable> getRestaurantTables(int id) {
-		return null;
-	}
-
-	@Override
-	public List<EntityProduct> getProductsByRestaurantAndAvailability(int id) {
-		return null;
-	}
-
-	@Override
-	public List<EntityCategory> getCategoriesByProductsByRestaurantAndAvailability(List<EntityProduct> products, int id) {
-		return null;
 	}
 }
