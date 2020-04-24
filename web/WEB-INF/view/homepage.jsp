@@ -11,7 +11,7 @@
     <title>ROS</title>
 <%--
 	<link rel="icon" href="obr/icon.png">
-    <link href="styleUDEMY.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 --%>
 	<link rel="icon" href="${pageContext.request.contextPath}/resources/img/icon.png">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/merge-style.css?v=1"/>
@@ -232,14 +232,13 @@
 		<div class="wrapFirstForm">
 			<div class="wrapFormReservation">
 
-				<form:form action="restaurant/searchByCity" modelAttribute="restaurants" method="get">
+				<form:form action="restaurant/search" modelAttribute="restaurants" method="get">
 					<label for="cities" class="reservationLabel">Vyber mesto:</label><br>
 					<select id="cities" class="reservationInput" name="city">
-
-						<c:forEach var="city" items="${cities}">
-							<option value="${city.toString()}" selected>${city.toString()}</option>
-						</c:forEach>
-
+						<option value="kosice" selected>Košice</option>
+						<option value="bratislava">Bratislava</option>
+						<option value="presov">Prešov</option>
+						<option value="poprad">Poprad</option>
 					</select>
 					</div>
 
@@ -309,15 +308,15 @@
 				<div class="peopleAndPriceSpace"></div>
 
 				<div class="groupPeople">
-					<c:forEach begin="0" end="${restaurant.visitors}" varStatus="loop">
-						<div class="person"></div>
-					</c:forEach>
+					<div class="person"></div>
+					<div class="person"></div>
+					<div class="person"></div>
 				</div>
 
 				<div class="groupPrice">
-					<c:forEach begin="0" end="${restaurant.priceRange}" varStatus="loop">
-						<div class="price"></div>
-					</c:forEach>
+					<div class="price"></div>
+					<div class="price"></div>
+					<div class="price"></div>
 				</div>
 				<p class="nameRestaurant"><c:out value="${restaurant.restaurantName}"/></p>
 
@@ -349,7 +348,7 @@
 						</div>
 					</c:if>
 
-					<p class="percent">${restaurant.percentageRating}%</p>
+					<p class="percent">97.8%</p>
 
 					 <div class="groupCircles">
 
@@ -366,13 +365,10 @@
 
 				</div>
 
-				<form:form action="reservation" method="post">
-					<div class="cyanWrap">
-						<input type="hidden" value="${restaurant.restaurantId}" name="restaurantId">
-						<button class="chooseText">VYBRAŤ</button>
-						<p class="fromPrice">od <c:out value="${restaurant.minPriceOrder}"/>€</p>
-					</div>
-				</form:form>
+				<div class="cyanWrap">
+					<p class="chooseText">VYBRAŤ</p>
+					<p class="fromPrice">od <c:out value="${restaurant.minPrice}"/>€</p>
+				</div>
 
 			</section>
 

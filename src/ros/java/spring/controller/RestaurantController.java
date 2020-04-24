@@ -61,19 +61,18 @@ public class RestaurantController {
 	}
 
 	@GetMapping("/search")
-	public String findRestaurantByKeyword(@RequestParam("word") String word, Model model) {
-		List<EntityRestaurant> restaurants = restaurantService.getRestaurantsByKeyword(word);
-		model.addAttribute("restaurants", restaurants);
+	public String findRestaurantByKeyword(@RequestParam("word") String word, @RequestParam("city") String city,  Model model) {
+		if (!city.equals("")) {
+			List<EntityRestaurant> restaurants = restaurantService.getRestaurantsSearch(word, city);
+			model.addAttribute("restaurants", restaurants);
+			return "restaurants-list";
+		}
 		return "restaurants-list";
 	}
 
 	@GetMapping("/searchByCity")
 	public String findRestaurantByCity(@RequestParam("city") String city, Model model) {
-		if (!city.equals("")) {
-		List<EntityRestaurant> restaurants = restaurantService.getRestaurantsByCity(city);
-		model.addAttribute("restaurants", restaurants);
-			return "restaurants-list";
-		}
+
 		return "homepage";
 
 	}

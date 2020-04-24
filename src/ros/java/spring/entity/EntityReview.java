@@ -55,7 +55,7 @@ public class EntityReview {
 
     @Override
     public String toString() {
-        return "EntityReviews{" +
+        return "EntityReview{" +
                 "reviewsId=" + reviewsId +
                 ", reviewsRatingStars=" + reviewsRatingStars +
                 ", reviewsComment='" + reviewsComment + '\'' +
