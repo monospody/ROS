@@ -3,13 +3,12 @@ package ros.java.spring.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ros.java.spring.dao.RestaurantDAO;
 import ros.java.spring.entity.EntityCategory;
 import ros.java.spring.entity.EntityProduct;
 import ros.java.spring.entity.EntityRestaurant;
-import ros.java.spring.dao.RestaurantDAO;
 import ros.java.spring.entity.EntityTable;
 
-import java.beans.Transient;
 import java.util.List;
 
 /**
@@ -58,27 +57,32 @@ public class RestaurantServiceImpl implements RestaurantService {
 	}
 
 	@Override
+	@Transactional
 	public List<EntityRestaurant> getRestaurantsByCity(String city) {
-		return null;
+		return restaurantDAO.getRestaurantsSearch("",city);
 	}
 
 	@Override
+	@Transactional
 	public List<String> getCities() {
-		return null;
+		return restaurantDAO.getCities();
 	}
 
 	@Override
+	@Transactional
 	public List<EntityTable> getRestaurantTables(int id) {
-		return null;
+		return restaurantDAO.getRestaurantTables(id);
 	}
 
 	@Override
+	@Transactional
 	public List<EntityProduct> getProductsByRestaurantAndAvailability(int id) {
-		return null;
+		return restaurantDAO.getProductsByRestaurantAndAvailability(id);
 	}
 
 	@Override
+	@Transactional
 	public List<EntityCategory> getCategoriesByProductsByRestaurantAndAvailability(List<EntityProduct> products, int id) {
-		return null;
+		return restaurantDAO.getCategoriesByProductsByRestaurantAndAvailability(products, id);
 	}
 }
