@@ -21,49 +21,48 @@
 		<div class="logoBottom"></div>
 		<h2>Rezervácia</h2>
 
-		<form class="reservationForm">
-			<div class="wrapReservationContainers">
-					<div class="reservationNameRestaurant">Geronimo Express</div>
-			
-				<div class="reservationContainer">	
-					<label class="reservationDate">
-					Dátum:
-					</label>
-					<input type="date" class="reservationInputDate">
-				</div>
+		<form:form cssClass="reservationForm" action="processAddReservationForm" modelAttribute="order" method="post">
+		<div class="wrapReservationContainers">
+			<div class="reservationNameRestaurant">Geronimo Express</div>
 
-					<div class="reservationContainer2">			
-						<label for="reservationFrom" class="reservationDate">
-						Od:
-						</label>
-						<input min="7" max="22" type="number" class="reservationInput" value="7">
-						<p class="reservationColon">:</p>
-					
-						<select id="reservationFrom" class="reservationSelect">
-						  <option value="00">00</option>
-						  <option value="10">10</option>
-						  <option value="20">20</option>
-						  <option value="30">30</option>
-						  <option value="40">40</option>
-						  <option value="50">50</option>
-						</select>	
-					</div>
-						
-					<div class="reservationContainer2">			
-						<label for="reservationTo" class="reservationDate">
-						Do:
-						</label>
-						<input min="7" max="22" type="number" class="reservationInput" value="7">
-						<p class="reservationColon">:</p>
-					
-						<select id="reservationTo" class="reservationSelect">
-						  <option value="00">00</option>
-						  <option value="10">10</option>
-						  <option value="20">20</option>
-						  <option value="30">30</option>
-						  <option value="40">40</option>
-						  <option value="50">50</option>
-						</select>
+			<div class="reservationContainer">
+				<label class="reservationDate">
+					Dátum:
+				</label>
+				<form:input path="orderDateDate" type="date" cssClass="reservationInputDate"/>
+			</div>
+
+			<div class="reservationContainer2">
+				<label for="reservationFrom" class="reservationDate">
+					Od:
+				</label>
+				<form:input path="orderFromHour" type="number" min="7" max="22" value="7" cssClass="reservationInput"/>
+				<p class="reservationColon">:</p>
+				<form:select path="orderFromMinute" id="reservationFrom" cssClass="reservationSelect">
+					<form:option value="00" />
+					<form:option value="10" />
+					<form:option value="20" />
+					<form:option value="30" />
+					<form:option value="40" />
+					<form:option value="50" />
+				</form:select>
+			</div>
+
+			<div class="reservationContainer2">
+				<label for="reservationTo" class="reservationDate">
+					Do:
+				</label>
+				<form:input path="orderToHour" type="number" min="7" max="22" value="7" cssClass="reservationInput"/>
+				<p class="reservationColon">:</p>
+
+				<form:select path="orderToMinute" id="reservationTo" cssClass="reservationSelect">
+					<form:option value="00" />
+					<form:option value="10" />
+					<form:option value="20" />
+					<form:option value="30" />
+					<form:option value="40" />
+					<form:option value="50" />
+				</form:select>
 					</div>
 						<p class="reservationInfo">V prípade predĺženia rezervácie na mieste je nutné kontaktovať personál.</p>
 			</div>
@@ -721,7 +720,7 @@
 			
 			
 			
-			</form>
+			</form:form>
 		</div>
 
 	<script src="${pageContext.request.contextPath}/resources/js/app.js"></script>
