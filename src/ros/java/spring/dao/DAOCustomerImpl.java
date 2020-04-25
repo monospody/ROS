@@ -45,13 +45,5 @@ public class DAOCustomerImpl implements DAOCustomer {
         Query query = session.createQuery("DELETE FROM EntityCustomer WHERE customerId=:customerId");
         query.setParameter("customerId", theId);
         query.executeUpdate();
-
-        for (int x=0; x<20; x++){
-            for (int y=0; y<30; y++){
-                if(x > y){
-
-                }
-            }
-        }
     }
 }

@@ -36,7 +36,6 @@ public class EntityCustomer {
 
     public EntityCustomer() {
     }
-
     public EntityCustomer(String customerFirstName, String customerLastName, String customerPassword, String customerCheckPassword, String customerEmail, String customerPhone, Timestamp registrationDate){
         this.customerFirstName = customerFirstName;
         this.customerLastName = customerLastName;

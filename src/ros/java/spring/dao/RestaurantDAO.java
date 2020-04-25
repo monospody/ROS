@@ -13,7 +13,9 @@ import java.util.List;
 public interface RestaurantDAO {
 	public List<EntityRestaurant> getRestaurants();
 
-	List<EntityRestaurant> getRestaurantsSearch(String word, String city);
+	public List<EntityRestaurant> getRestaurantsByKeyword(String word);
+
+	List<EntityRestaurant> getRestaurantsByCity(String word);
 
 	void saveRestaurant(EntityRestaurant restaurant);
 
@@ -23,11 +25,13 @@ public interface RestaurantDAO {
 
 	void deleteRestaurant(int id);
 
-	List<String> getCities();
+	void setTransientVariables(List<EntityRestaurant> restaurants);
 
-	List<EntityTable> getRestaurantTables(int id);
+    List<String> getCities();
 
-	List<EntityProduct> getProductsByRestaurantAndAvailability(int id);
+    List<EntityTable> getRestaurantTables(int id);
 
-	List<EntityCategory> getCategoriesByProductsByRestaurantAndAvailability(List<EntityProduct> products, int id);
+    List<EntityProduct> getProductsByRestaurantAndAvailability(int id);
+
+    List<EntityCategory> getCategoriesByProductsByRestaurantAndAvailability(List<EntityProduct> products, int id);
 }

@@ -28,38 +28,14 @@ public class RestaurantServiceImpl implements RestaurantService {
 
 	@Override
 	@Transactional
-	public List<EntityRestaurant> getRestaurantsSearch(String word, String city) {
-		return restaurantDAO.getRestaurantsSearch(word, city);
-	}
-
-	@Override
-	@Transactional
-	public void saveRestaurant(EntityRestaurant restaurant) {
-		restaurantDAO.saveRestaurant(restaurant);
-	}
-
-	@Override
-	@Transactional
-	public EntityRestaurant getRestaurant(int id) {
-		return restaurantDAO.getRestaurant(id);
-	}
-
-	@Override
-	@Transactional
-	public void deleteRestaurant(int id) {
-		restaurantDAO.deleteRestaurant(id);
-	}
-
-	@Override
-	@Transactional
-	public void addRestaurant(EntityRestaurant restaurant) {
-		restaurantDAO.addRestaurant(restaurant);
+	public List<EntityRestaurant> getRestaurantsByKeyword(String word) {
+		return restaurantDAO.getRestaurantsByKeyword(word);
 	}
 
 	@Override
 	@Transactional
 	public List<EntityRestaurant> getRestaurantsByCity(String city) {
-		return restaurantDAO.getRestaurantsSearch("",city);
+		return restaurantDAO.getRestaurantsByCity(city);
 	}
 
 	@Override
@@ -84,5 +60,29 @@ public class RestaurantServiceImpl implements RestaurantService {
 	@Transactional
 	public List<EntityCategory> getCategoriesByProductsByRestaurantAndAvailability(List<EntityProduct> products, int id) {
 		return restaurantDAO.getCategoriesByProductsByRestaurantAndAvailability(products, id);
+	}
+
+	@Override
+	@Transactional
+	public void saveRestaurant(EntityRestaurant restaurant) {
+		restaurantDAO.saveRestaurant(restaurant);
+	}
+
+	@Override
+	@Transactional
+	public EntityRestaurant getRestaurant(int id) {
+		return restaurantDAO.getRestaurant(id);
+	}
+
+	@Override
+	@Transactional
+	public void deleteRestaurant(int id) {
+		restaurantDAO.deleteRestaurant(id);
+	}
+
+	@Override
+	@Transactional
+	public void addRestaurant(EntityRestaurant restaurant) {
+		restaurantDAO.addRestaurant(restaurant);
 	}
 }
